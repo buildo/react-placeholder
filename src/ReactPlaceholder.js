@@ -1,6 +1,6 @@
 import React from 'react';
 import {omit} from 'lodash/object';
-import fillers from './fillers';
+import placeholders from './placeholders';
 
 const ReactFiller = React.createClass({
 
@@ -43,9 +43,9 @@ const ReactFiller = React.createClass({
     if (this.props.customPlaceholder) {
       return this.props.customPlaceholder;
     }
-  const Filler = fillers[this.props.type];
+  const Placeholder = placeholders[this.props.type];
     const props = omit(this.props, ['children', 'ready', 'firstLaunchOnly', 'type']);
-    return <Filler {...props} />;
+    return <Placeholder {...props} />;
   },
 
   render() {
