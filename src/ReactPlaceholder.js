@@ -12,7 +12,7 @@ const ReactFiller = React.createClass({
                        ]).isRequired,
     ready:             React.PropTypes.bool.isRequired,
     firstLaunchOnly:   React.PropTypes.bool,
-    type:              React.PropTypes.string,
+    type:              React.PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
     rows:              React.PropTypes.number,
     color:             React.PropTypes.string,
     customPlaceholder: React.PropTypes.oneOfType([

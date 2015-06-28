@@ -1,5 +1,5 @@
 {
-  "name": "react-filler",
+  "name": "react-placeholder",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:buildo/react-filler"
+    "url": "git@github.com:buildo/react-placeholder"
   },
   "keywords": [
     "react",
@@ -27,9 +27,9 @@
   "author": "Francesco Cioria <francesco@buildo.io>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/buildo/react-filler/issues"
+    "url": "https://github.com/buildo/react-placeholder/issues"
   },
-  "homepage": "https://github.com/buildo/react-filler",
+  "homepage": "https://github.com/buildo/react-placeholder",
   "dependencies": {},
   "devDependencies": {
     "babel": "^5.4.7",

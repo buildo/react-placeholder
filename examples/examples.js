@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlaceholder from '../src/ReactPlaceholder';
-import {TextBlock, MediaBlock, TextRow, RectShape, RoundShape} from '../src/fillers';
+import {TextBlock, MediaBlock, TextRow, RectShape, RoundShape} from '../src/placeholders';
 
 const Example = React.createClass({
 
