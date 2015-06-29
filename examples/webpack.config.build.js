@@ -10,23 +10,16 @@ var paths = {
 
 module.exports = assign(webpackBase, {
 
-  entry: [
-    'webpack/hot/dev-server',
-    paths.EXAMPLES + '/examples.js'
-  ],
-
-  devtool: 'source-map',
-
-  devServer: {
-    contentBase: paths.EXAMPLES,
-    hot: true,
-    inline: true,
-    port: '8080'
-  },
+  entry: paths.EXAMPLES + '/examples.js',
 
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
     })
   ]
 

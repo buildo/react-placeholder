@@ -7,10 +7,11 @@
     "test": "./node_modules/karma/bin/karma start",
     "build": "rm -rf lib && mkdir lib && babel --loose --stage 0 --out-dir lib src",
     "lint": "eslint src",
-    "preversion": "npm run lint && npm run test",
+    "preversion": "npm run lint && npm run test && npm run build-examples",
     "prepublish": "npm run build",
+    "build-examples": "npm run clean && webpack --config examples/webpack.config.build.js --progress",
     "start": "npm run clean && webpack-dev-server --config examples/webpack.config.js --progress --hot --inline",
-    "clean": "rm -rf examples/bundle.js"
+    "clean": "rm -f examples/bundle.js examples/bundle.js.map"
   },
   "repository": {
     "type": "git",
