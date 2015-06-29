@@ -13,7 +13,7 @@ React.renderComponent(
   document.body);
 ```
 
-you can find more exmaples [here](https://github.com/buildo/react-placeholder/tree/master/examples)
+you can find more examples [here](https://github.com/buildo/react-placeholder/tree/master/examples)
 
 ###Install
 ```
