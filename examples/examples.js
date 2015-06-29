@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react/addons';
 import ReactPlaceholder from '../src/ReactPlaceholder';
 import {TextBlock, MediaBlock, TextRow, RectShape, RoundShape} from '../src/placeholders';
 
@@ -6,11 +6,15 @@ const Example = React.createClass({
 
   propTypes: {},
 
+  mixins: [React.addons.LinkedStateMixin],
+
   getInitialState() {
     return {
       ready: false,
       readyCustom: false,
       readyFirstLaunch: false,
+      textBlockRows: 6,
+      mediaBlockRows: 4
     };
   },
 
@@ -52,10 +56,14 @@ const Example = React.createClass({
         <h1>Using ReactPlaceholder types</h1>
         <button onClick={this.toggleReady} style={buttonStyle}>{this.state.ready ? 'set loading' : 'set ready'}</button>
         <p>"text"</p>
+        <div className='ui input'>
+          <span style={{lineHeight: '40px'}}>nº of rows:</span>
+          <input type='number' valueLink={this.linkState('textBlockRows')} style={{width: 80, marginLeft: 5}}/>
+        </div>
         <div className='ui segment'>
           <ReactPlaceholder
             ready={this.state.ready}
-            rows={4}
+            rows={this.state.textBlockRows}
             color='#F0F0F0'
             className='my-text-block'>
               {realComponent}
@@ -63,11 +71,15 @@ const Example = React.createClass({
         </div>
 
         <p>"media"</p>
+        <div className='ui input'>
+          <span style={{lineHeight: '40px'}}>nº of rows:</span>
+          <input type='number' valueLink={this.linkState('mediaBlockRows')} style={{width: 80, marginLeft: 5}}/>
+        </div>
         <div className='ui segment'>
           <ReactPlaceholder
             ready={this.state.ready}
             type='media'
-            rows={4}
+            rows={this.state.mediaBlockRows}
             color='#F0F0F0'
             className='my-text-block'>
               {realComponent}
