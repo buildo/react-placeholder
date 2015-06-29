@@ -12,6 +12,7 @@ React.renderComponent(
   </div>,
   document.body);
 ```
+[**Live Demo**](https://rawgit.com/buildo/react-placeholder/master/examples/index.html)
 
 you can find more examples [here](https://github.com/buildo/react-placeholder/tree/master/examples)
 
