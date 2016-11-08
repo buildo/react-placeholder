@@ -31,7 +31,9 @@
     "url": "https://github.com/buildo/react-placeholder/issues"
   },
   "homepage": "https://github.com/buildo/react-placeholder",
-  "dependencies": {},
+  "dependencies": {
+    "tcomb-react": "^0.9.3"
+  },
   "devDependencies": {
     "babel": "^5.8.12",
     "babel-eslint": "^7.0.0",
