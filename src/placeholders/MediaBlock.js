@@ -1,35 +1,26 @@
 import React from 'react';
+import cx from 'classnames';
 import TextBlock from './TextBlock';
 import RoundShape from './RoundShape';
 
 
-const MediaBlock = React.createClass({
+export default class MediaBlock extends React.Component {
 
-  propTypes: {
+  static propTypes = {
     rows: React.PropTypes.number.isRequired,
     color: React.PropTypes.string.isRequired,
     style: React.PropTypes.object,
     className: React.PropTypes.string
-  },
-
-  getDefaultProps() {
-    return {
-      className: '',
-      style: {}
-    };
-  },
+  }
 
   render() {
-    this.props.style.display = 'flex';
+    const { className, style, color, rows } = this.props;
     return (
-      <div className={`media-block ${this.props.className}`} style={this.props.style}>
-        <RoundShape color={this.props.color} style={{minHeight: 55, width: 55, minWidth: 55, marginRight: 10}}/>
-        <TextBlock color={this.props.color} rows={this.props.rows} />
+      <div className={cx('media-block', className)} style={{ ...style, display: 'flex' }}>
+        <RoundShape color={color} style={{ minHeight: 55, width: 55, minWidth: 55, marginRight: 10 }}/>
+        <TextBlock color={color} rows={rows} />
       </div>
     );
   }
 
-});
-
-
-export default MediaBlock;
+}
