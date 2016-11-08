@@ -1,12 +1,11 @@
-var path = require('path');
-var webpack = require('webpack');
+import path from 'path';
 
-var paths = {
+export const paths = {
   SRC: path.resolve(__dirname, '../src'),
   EXAMPLES: path.resolve(__dirname, '.')
 };
 
-module.exports = {
+export default {
 
   output: {
     path: paths.EXAMPLES,
