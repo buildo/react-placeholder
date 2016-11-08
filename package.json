@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/karma/bin/karma start",
     "build": "rm -rf lib && mkdir lib && babel --loose --stage 0 --out-dir lib src",
-    "lint": "eslint src",
+    "lint": "eslint src examples/examples.js",
     "preversion": "npm run lint && npm run test && npm run build-examples",
     "prepublish": "npm run build",
     "build-examples": "npm run clean && webpack --config examples/webpack.config.build.js --progress",
