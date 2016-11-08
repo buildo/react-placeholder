@@ -10,8 +10,12 @@ export default class TextRow extends React.Component {
     style: React.PropTypes.object
   }
 
+  static defaultProps = {
+    style: {}
+  }
+
   render() {
-    const { className, maxHeight, color, style, invisible } = this.props;
+    const { className, maxHeight, color, invisible, style } = this.props;
 
     const defaultStyle = {
       maxHeight,
@@ -26,7 +30,7 @@ export default class TextRow extends React.Component {
         style={{
           ...defaultStyle,
           ...style,
-          width: invisible ? 0 : undefined
+          width: invisible ? 0 : (style.width || defaultStyle.width)
         }}
       />
     );
