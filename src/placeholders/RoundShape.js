@@ -1,36 +1,27 @@
 import React from 'react';
-import {assign} from 'lodash/object';
+import cx from 'classnames';
 
-const RoundShape = React.createClass({
+export default class RoundShape extends React.Component {
 
-  /* eslint-disable key-spacing */
-  propTypes: {
+  static propTypes = {
     color: React.PropTypes.string,
     className: React.PropTypes.string,
     style: React.PropTypes.object
-  },
-  /* eslint-enable key-spacing */
-
-  getDefaultProps() {
-    return {
-      className: '',
-      style: {}
-    };
-  },
+  }
 
   render() {
+    const { className, style, color } = this.props;
+
     const defaultStyles = {
-      backgroundColor: this.props.color,
+      backgroundColor: color,
       borderRadius: '500rem',
       width: '100%',
       height: '100%'
     };
+
     return (
-      <div className={`round-shape ${this.props.className}`} style={assign(defaultStyles, this.props.style)}/>
+      <div className={cx('round-shape', className)} style={{ ...defaultStyles, ...style }}/>
     );
   }
 
-});
-
-
-export default RoundShape;
+}

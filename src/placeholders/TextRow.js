@@ -1,43 +1,39 @@
 import React from 'react';
-import {assign} from 'lodash/object';
+import cx from 'classnames';
 
-const TextRow = React.createClass({
+export default class TextRow extends React.Component {
 
-  /* eslint-disable key-spacing */
-  propTypes: {
+  static propTypes = {
     invisible: React.PropTypes.bool,
     className: React.PropTypes.string,
     color: React.PropTypes.string,
     style: React.PropTypes.object
-  },
-  /* eslint-enable key-spacing */
+  }
 
-  getDefaultProps() {
-    return {
-      className: '',
-      style: {}
-    };
-  },
+  static defaultProps = {
+    style: {}
+  }
 
   render() {
-    const defaultStyles = {
+    const { className, maxHeight, color, invisible, style } = this.props;
+
+    const defaultStyle = {
+      maxHeight,
       width: '100%',
       height: 8,
-      maxHeight: this.props.maxHeight,
-      backgroundColor: this.props.color
+      backgroundColor: color
     };
-    const style = assign(defaultStyles, this.props.style);
-    if (this.props.invisible) {
-      style.width = 0;
-    }
 
-    const invisible = this.props.invisible ? 'invisible' : '';
     return (
-      <div className={`text-row ${this.props.className} ${invisible}`} style={style}/>
+      <div
+        className={cx('text-row', className, { invisible })}
+        style={{
+          ...defaultStyle,
+          ...style,
+          width: invisible ? 0 : (style.width || defaultStyle.width)
+        }}
+      />
     );
   }
 
-});
-
-
-export default TextRow;
+}

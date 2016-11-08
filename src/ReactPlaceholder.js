@@ -2,55 +2,52 @@ import React from 'react';
 import {omit} from 'lodash/object';
 import placeholders from './placeholders';
 
-const ReactFiller = React.createClass({
+export default class ReactFiller extends React.Component {
 
-  /* eslint-disable key-spacing */
-  propTypes: {
-    children:          React.PropTypes.oneOfType([
-                         React.PropTypes.node,
-                         React.PropTypes.element
-                       ]).isRequired,
-    ready:             React.PropTypes.bool.isRequired,
-    firstLaunchOnly:   React.PropTypes.bool,
-    type:              React.PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
-    rows:              React.PropTypes.number,
-    color:             React.PropTypes.string,
+  static propTypes = {
+    children: React.PropTypes.oneOfType([
+      React.PropTypes.node,
+      React.PropTypes.element
+    ]).isRequired,
+    ready: React.PropTypes.bool.isRequired,
+    firstLaunchOnly: React.PropTypes.bool,
+    type: React.PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
+    rows: React.PropTypes.number,
+    color: React.PropTypes.string,
     customPlaceholder: React.PropTypes.oneOfType([
-                         React.PropTypes.node,
-                         React.PropTypes.element
-                       ])
-  },
-  /* eslint-enable key-spacing */
+      React.PropTypes.node,
+      React.PropTypes.element
+    ])
+  }
 
-  getDefaultProps() {
-    return {
-      type: 'text',
-      color: '#CDCDCD'
-    };
-  },
+  static defaultProps = {
+    type: 'text',
+    color: '#CDCDCD'
+  }
 
-  getInitialState() {
-    return {
-      ready: this.props.ready
-    };
-  },
+  state = {
+    ready: this.props.ready
+  }
 
-  isReady() {
-    return this.props.firstLaunchOnly ? this.state.ready : this.props.ready;
-  },
+  isReady = () => (
+    this.props.firstLaunchOnly ? this.state.ready : this.props.ready
+  )
 
-  getFiller() {
-    if (this.props.customPlaceholder) {
-      return this.props.customPlaceholder;
+  getFiller = () => {
+    const { type, customPlaceholder } = this.props;
+    if (customPlaceholder) {
+      return customPlaceholder;
     }
-  const Placeholder = placeholders[this.props.type];
+
+    const Placeholder = placeholders[type];
     const props = omit(this.props, ['children', 'ready', 'firstLaunchOnly', 'type']);
+
     return <Placeholder {...props} />;
-  },
+  }
 
   render() {
     return this.isReady() ? this.props.children : this.getFiller();
-  },
+  }
 
   componentWillReceiveProps(nextProps) {
     if (!this.state.ready) {
@@ -60,7 +57,4 @@ const ReactFiller = React.createClass({
     }
   }
 
-});
-
-
-export default ReactFiller;
+}

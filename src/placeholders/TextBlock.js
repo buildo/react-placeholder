@@ -1,52 +1,47 @@
 import React from 'react';
+import cx from 'classnames';
 import TextRow from './TextRow';
 
 const widths = [97, 100, 94, 90, 98, 95, 98, 40];
 
-const TextBlock = React.createClass({
+export default class TextBlock extends React.Component {
 
-  propTypes: {
+  static propTypes = {
     rows: React.PropTypes.number.isRequired,
     color: React.PropTypes.string.isRequired,
     style: React.PropTypes.object,
     className: React.PropTypes.string
-  },
+  }
 
-  getDefaultProps() {
-    return {
-      className: '',
-      style: {}
-    };
-  },
+  getRowStyle = (i) => {
+    const { rows, color } = this.props;
 
-  getRowStyle(i) {
-    const rows = (this.props.rows * 2) - 1;
     const style = {
-      backgroundColor: this.props.color,
-      maxHeight: (100 / rows) + '%'
+      backgroundColor: color,
+      maxHeight: (100 / (rows * 2 - 1)) + '%'
     };
+
     if (i % 2 === 0) {
       style.width = widths[((i / 2) + widths.length) % widths.length] + '%';
     }
-    return style;
-  },
 
-  getRows() {
+    return style;
+  }
+
+  getRows = () => {
     const rows = (this.props.rows * 2) - 1;
     const range = Array.apply(null, {length: rows});
     return range.map((x, i) => <TextRow style={this.getRowStyle(i)} invisible={i % 2 > 0} key={i}/>);
-  },
+  }
 
   render() {
-    this.props.style.width = '100%';
+    const { style, className } = this.props;
+
     return (
-      <div className={`text-block ${this.props.className}`} style={this.props.style}>
+      <div className={cx('text-block', className)} style={{ ...style, width: '100%' }}>
         {this.getRows()}
       </div>
     );
   }
 
-});
-
-
-export default TextBlock;
+}
