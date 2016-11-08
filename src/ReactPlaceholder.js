@@ -10,9 +10,11 @@ import placeholders from './placeholders';
   type: t.enums.of(['text', 'media', 'textRow', 'rect', 'round']),
   rows: t.maybe(t.Integer),
   color: t.String,
-  customPlaceholder: t.maybe(t.ReactChildren)
+  customPlaceholder: t.maybe(t.ReactChildren),
+  className: t.maybe(t.String),
+  style: t.maybe(t.Object)
 })
-export default class ReactFiller extends React.Component {
+export default class ReactPlaceholder extends React.Component {
 
   static defaultProps = {
     type: 'text',
