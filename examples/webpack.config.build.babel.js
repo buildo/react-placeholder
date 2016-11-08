@@ -1,11 +1,12 @@
 import path from 'path';
 import webpack from 'webpack';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import webpackBase, { paths } from './webpack.base';
 
 export default {
   ...webpackBase,
 
-  entry: path.resolve(paths.EXAMPLES, '/examples.js'),
+  entry: path.resolve(paths.EXAMPLES, 'examples.js'),
 
   plugins: [
     new webpack.DefinePlugin({
@@ -15,7 +16,8 @@ export default {
       compress: {
         warnings: false
       }
-    })
+    }),
+    new ExtractTextPlugin('style', 'style.min.css')
   ]
 
 };

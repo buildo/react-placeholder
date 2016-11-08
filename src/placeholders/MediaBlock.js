@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { t, props } from 'tcomb-react';
+import FlexView from 'react-flexview';
 import TextBlock from './TextBlock';
 import RoundShape from './RoundShape';
 
@@ -15,13 +16,13 @@ export default class MediaBlock extends React.Component {
   render() {
     const { className, style, color, rows } = this.props;
     return (
-      <div className={cx('media-block', className)} style={{ ...style, display: 'flex' }}>
+      <FlexView className={cx('media-block', className)} style={style}>
         <RoundShape
           color={color}
           style={{ minHeight: 55, width: 55, minWidth: 55, marginRight: 10 }}
         />
         <TextBlock color={color} rows={rows} />
-      </div>
+      </FlexView>
     );
   }
 

@@ -2,6 +2,8 @@ import React from 'react';
 import ReactPlaceholder from '../src/ReactPlaceholder';
 import { TextBlock, MediaBlock, TextRow, RectShape, RoundShape } from '../src/placeholders';
 
+import 'react-flexview/lib/flexView.css';
+
 class Example extends React.Component {
 
   state = {
@@ -53,7 +55,7 @@ class Example extends React.Component {
         </button>
         <p>"text"</p>
         <div className='ui input'>
-          <span style={{ lineHeight: 40 }}>nº of rows:</span>
+          <span style={{ lineHeight: '40px' }}>nº of rows:</span>
           <input
             type='number'
             value={this.state.textBlockRows}
@@ -74,7 +76,7 @@ class Example extends React.Component {
 
         <p>"media"</p>
         <div className='ui input'>
-          <span style={{ lineHeight: 40 }}>nº of rows:</span>
+          <span style={{ lineHeight: '40px' }}>nº of rows:</span>
           <input
             type='number'
             value={this.state.mediaBlockRows}

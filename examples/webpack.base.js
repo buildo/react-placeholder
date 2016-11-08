@@ -1,4 +1,5 @@
 import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export const paths = {
   SRC: path.resolve(__dirname, '../src'),
@@ -19,6 +20,10 @@ export default {
         loader: 'babel?stage=0&loose',
         include: [paths.SRC, paths.EXAMPLES],
         exclude: /node_modules/
+      },
+      {
+        test: /\.s?css$/,
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap')
       }
     ],
     preLoaders: [
