@@ -1,24 +1,18 @@
 import React from 'react';
 import {omit} from 'lodash/object';
+import { t, props } from 'tcomb-react';
 import placeholders from './placeholders';
 
+@props({
+  children: t.ReactChildren,
+  ready: t.Boolean,
+  firstLaunchOnly: t.maybe(t.Boolean),
+  type: t.enums.of(['text', 'media', 'textRow', 'rect', 'round']),
+  rows: t.maybe(t.Integer),
+  color: t.String,
+  customPlaceholder: t.maybe(t.ReactChildren)
+})
 export default class ReactFiller extends React.Component {
-
-  static propTypes = {
-    children: React.PropTypes.oneOfType([
-      React.PropTypes.node,
-      React.PropTypes.element
-    ]).isRequired,
-    ready: React.PropTypes.bool.isRequired,
-    firstLaunchOnly: React.PropTypes.bool,
-    type: React.PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
-    rows: React.PropTypes.number,
-    color: React.PropTypes.string,
-    customPlaceholder: React.PropTypes.oneOfType([
-      React.PropTypes.node,
-      React.PropTypes.element
-    ])
-  }
 
   static defaultProps = {
     type: 'text',

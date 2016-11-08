@@ -1,14 +1,14 @@
 import React from 'react';
 import cx from 'classnames';
+import { t, props } from 'tcomb-react';
 
+@props({
+  invisible: t.maybe(t.Boolean),
+  className: t.maybe(t.String),
+  color: t.maybe(t.String),
+  style: t.maybe(t.Object)
+})
 export default class TextRow extends React.Component {
-
-  static propTypes = {
-    invisible: React.PropTypes.bool,
-    className: React.PropTypes.string,
-    color: React.PropTypes.string,
-    style: React.PropTypes.object
-  }
 
   static defaultProps = {
     style: {}

@@ -1,13 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
+import { t, props } from 'tcomb-react';
 
+@props({
+  color: t.maybe(t.String),
+  className: t.maybe(t.String),
+  style: t.maybe(t.Object)
+})
 export default class RectShape extends React.Component {
-
-  static propTypes = {
-    color: React.PropTypes.string,
-    className: React.PropTypes.string,
-    style: React.PropTypes.object
-  }
 
   render() {
     const { className, style, color } = this.props;

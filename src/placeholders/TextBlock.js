@@ -1,17 +1,17 @@
 import React from 'react';
 import cx from 'classnames';
+import { t, props } from 'tcomb-react';
 import TextRow from './TextRow';
 
 const widths = [97, 100, 94, 90, 98, 95, 98, 40];
 
+@props({
+  rows: t.Number,
+  color: t.String,
+  style: t.maybe(t.Object),
+  className: t.maybe(t.String)
+})
 export default class TextBlock extends React.Component {
-
-  static propTypes = {
-    rows: React.PropTypes.number.isRequired,
-    color: React.PropTypes.string.isRequired,
-    style: React.PropTypes.object,
-    className: React.PropTypes.string
-  }
 
   getRowStyle = (i) => {
     const { rows, color } = this.props;

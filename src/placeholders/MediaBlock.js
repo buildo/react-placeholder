@@ -1,17 +1,16 @@
 import React from 'react';
 import cx from 'classnames';
+import { t, props } from 'tcomb-react';
 import TextBlock from './TextBlock';
 import RoundShape from './RoundShape';
 
-
+@props({
+  rows: t.Integer,
+  color: t.String,
+  className: t.maybe(t.String),
+  style: t.maybe(t.Object)
+})
 export default class MediaBlock extends React.Component {
-
-  static propTypes = {
-    rows: React.PropTypes.number.isRequired,
-    color: React.PropTypes.string.isRequired,
-    style: React.PropTypes.object,
-    className: React.PropTypes.string
-  }
 
   render() {
     const { className, style, color, rows } = this.props;
