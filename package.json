@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/buildo/react-placeholder",
   "dependencies": {
+    "lodash.omit": "^4.5.0",
     "tcomb-react": "^0.9.3"
   },
   "devDependencies": {
@@ -50,7 +51,6 @@
     "karma-coverage": "^0.3.1",
     "karma-mocha": "^0.1.10",
     "karma-webpack": "^1.5.1",
-    "lodash": "^3.9.3",
     "mocha": "^2.2.5",
     "react": "^0.13.3",
     "require-dir": "^0.3.0",

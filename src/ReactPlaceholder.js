@@ -1,5 +1,5 @@
 import React from 'react';
-import {omit} from 'lodash/object';
+import omit from 'lodash.omit';
 import { t, props } from 'tcomb-react';
 import placeholders from './placeholders';
 

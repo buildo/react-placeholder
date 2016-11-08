@@ -2513,6 +2513,10 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
+lodash.omit:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
+
 lodash.partial@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/lodash.partial/-/lodash.partial-3.1.1.tgz#ab4a6ab6e32f03ecb1519048cdbae502680053e5"
