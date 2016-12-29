@@ -17,7 +17,10 @@ export default class MediaBlock extends React.Component {
     const { className, style, color, rows } = this.props;
     return (
       <div className={cx('media-block', className)} style={{ ...style, display: 'flex' }}>
-        <RoundShape color={color} style={{ minHeight: 55, width: 55, minWidth: 55, marginRight: 10 }}/>
+        <RoundShape
+          color={color}
+          style={{ minHeight: 55, width: 55, minWidth: 55, marginRight: 10 }}
+        />
         <TextBlock color={color} rows={rows} />
       </div>
     );

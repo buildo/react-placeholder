@@ -1,8 +1,8 @@
 import React from 'react';
-import {omit} from 'lodash/object';
+import omit from 'lodash/object/omit';
 import placeholders from './placeholders';
 
-export default class ReactFiller extends React.Component {
+export default class ReactPlaceholder extends React.Component {
 
   static propTypes = {
     children: React.PropTypes.oneOfType([

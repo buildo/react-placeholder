@@ -18,11 +18,11 @@ export default class TextBlock extends React.Component {
 
     const style = {
       backgroundColor: color,
-      maxHeight: (100 / (rows * 2 - 1)) + '%'
+      maxHeight: `${(100 / (rows * 2 - 1))}%`
     };
 
     if (i % 2 === 0) {
-      style.width = widths[((i / 2) + widths.length) % widths.length] + '%';
+      style.width = `${widths[((i / 2) + widths.length) % widths.length]}%`;
     }
 
     return style;
@@ -30,8 +30,10 @@ export default class TextBlock extends React.Component {
 
   getRows = () => {
     const rows = (this.props.rows * 2) - 1;
-    const range = Array.apply(null, {length: rows});
-    return range.map((x, i) => <TextRow style={this.getRowStyle(i)} invisible={i % 2 > 0} key={i}/>);
+    const range = Array.apply(null, { length: rows }); // eslint-disable-line prefer-spread
+    return range.map((x, i) => (
+      <TextRow style={this.getRowStyle(i)} invisible={i % 2 > 0} key={i}/>
+    ));
   }
 
   render() {
