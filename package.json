@@ -10,7 +10,7 @@
     "preversion": "npm run lint && npm run test && npm run build-examples",
     "prepublish": "npm run build",
     "build-examples": "npm run clean && webpack --config examples/webpack.config.build.js --progress",
-    "start": "npm run clean && webpack-dev-server --config examples/webpack.config.js --progress --hot --inline",
+    "start": "webpack-dev-server --config examples/webpack.config.js --progress --hot --inline",
     "clean": "rm -f examples/bundle.js examples/bundle.js.map"
   },
   "repository": {
