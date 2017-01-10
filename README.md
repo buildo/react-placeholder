@@ -55,7 +55,7 @@ import {TextBlock, MediaBlock, TextRow, RectShape, RoundShape} from 'react-place
 
 const awesomePlaceholder (
   <div className='my-awesome-placeholder'>
-    <RectShape color='blue' style={{widht: 30, height: 80}}/>
+    <RectShape color='blue' style={{width: 30, height: 80}}/>
     <TextBlock rows={7} color='yellow'/>
   </div>
 );
