@@ -51,7 +51,7 @@ If the built-in set of placeholders is not enough, you can pass you own through 
 You can also import the built-in placeholders directly. This might be useful to use them to create your own customized placeholder:
 
 ```jsx
-import {TextBlock, MediaBlock, TextRow, RectShape, RoundShape} from 'react-placeholder/placeholders';
+import {TextBlock, MediaBlock, TextRow, RectShape, RoundShape} from 'react-placeholder/lib/placeholders';
 
 const awesomePlaceholder (
   <div className='my-awesome-placeholder'>
