@@ -16,12 +16,12 @@ React.renderComponent(
 
 you can find more examples [here](https://github.com/buildo/react-placeholder/tree/master/examples)
 
-###Install
+### Install
 ```
 npm install --save react-placeholder
 ```
 
-###Props
+### Props
 
 ```jsx
 children:          React.PropTypes.oneOfType([
@@ -39,7 +39,7 @@ customPlaceholder: React.PropTypes.oneOfType([
                    ])
 ```
 
-###Customization
+### Customization
 If the built-in set of placeholders is not enough, you can pass you own through the prop **"customPlaceholder"**
 
 ```jsx
@@ -65,7 +65,7 @@ const awesomePlaceholder (
 </ReactPlaceholder>
 ```
 
-###Style
+### Style
 you can style the placeholder by passing **```className```** or **```style```** or by using the built-in classes:
 
 *"text-block", "media-block", "text-row", "rect-shape", "round-shape".*
