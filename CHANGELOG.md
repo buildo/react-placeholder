@@ -3,7 +3,7 @@
 ## [Unreleased](https://github.com/buildo/react-placeholder/tree/HEAD)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v0.0.2...HEAD)
 
-#### New features:
+#### Fixes (bugs & defects):
 
 - package is currently broken [#6](https://github.com/buildo/react-placeholder/issues/6)
 
