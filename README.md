@@ -1,17 +1,22 @@
 # React Placeholder
 A React component to easily show a placeholder while loading. You can use one of the default set, or pass your own!
 
+![image](https://cloud.githubusercontent.com/assets/691940/24140211/78406120-0e1f-11e7-9738-af2b2434c50e.png)
+
 ```jsx
 import ReactPlaceholder from 'react-placeholder';
 
 React.renderComponent(
   <div>
-    <ReactPlaceholder type='text' rows={6} ready={this.state.ready}>
+    <ReactPlaceholder type='media' rows={7} ready={this.state.ready}>
       <MyComponent />
     </ReactPlaceholder>
   </div>,
   document.body);
 ```
+
+
+
 [**Live Demo**](https://rawgit.com/buildo/react-placeholder/master/examples/index.html)
 
 you can find more examples [here](https://github.com/buildo/react-placeholder/tree/master/examples)
