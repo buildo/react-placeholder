@@ -20,7 +20,7 @@ export default class TextRow extends React.Component {
     const defaultStyle = {
       maxHeight,
       width: '100%',
-      height: 8,
+      height: '1em',
       backgroundColor: color
     };
 
