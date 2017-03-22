@@ -4,34 +4,34 @@ import cx from 'classnames';
 export default class TextRow extends React.Component {
 
   static propTypes = {
-    invisible: React.PropTypes.bool,
     className: React.PropTypes.string,
     color: React.PropTypes.string,
+    lineSpacing: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]),
     style: React.PropTypes.object
   }
 
   static defaultProps = {
-    style: {}
+    lineSpacing: '0.7em'
   }
 
   render() {
-    const { className, maxHeight, color, invisible, style } = this.props;
+    const { className, maxHeight, color, lineSpacing, style } = this.props;
 
-    const defaultStyle = {
+    const defaultStyles = {
       maxHeight,
       width: '100%',
-      height: 8,
-      backgroundColor: color
+      height: '1em',
+      backgroundColor: color,
+      marginTop: lineSpacing
     };
 
     return (
       <div
-        className={cx('text-row', className, { invisible })}
-        style={{
-          ...defaultStyle,
-          ...style,
-          width: invisible ? 0 : (style.width || defaultStyle.width)
-        }}
+        className={cx('text-row', className)}
+        style={{ ...defaultStyles, ...style }}
       />
     );
   }
