@@ -9,6 +9,10 @@ export default class TextBlock extends React.Component {
   static propTypes = {
     rows: React.PropTypes.number.isRequired,
     color: React.PropTypes.string.isRequired,
+    lineSpacing: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]),
     style: React.PropTypes.object,
     className: React.PropTypes.string
   }
@@ -16,23 +20,22 @@ export default class TextBlock extends React.Component {
   getRowStyle = (i) => {
     const { rows, color } = this.props;
 
-    const style = {
+    return {
       backgroundColor: color,
-      maxHeight: `${(100 / (rows * 2 - 1))}%`
+      maxHeight: `${(100 / (rows * 2 - 1))}%`,
+      width: `${widths[(i + widths.length) % widths.length]}%`
     };
-
-    if (i % 2 === 0) {
-      style.width = `${widths[((i / 2) + widths.length) % widths.length]}%`;
-    }
-
-    return style;
   }
 
   getRows = () => {
-    const rows = (this.props.rows * 2) - 1;
+    const { rows, lineSpacing } = this.props;
     const range = Array.apply(null, { length: rows }); // eslint-disable-line prefer-spread
     return range.map((x, i) => (
-      <TextRow style={this.getRowStyle(i)} invisible={i % 2 > 0} key={i}/>
+      <TextRow
+        style={this.getRowStyle(i)}
+        lineSpacing={i !== 0 ? lineSpacing : 0}
+        key={i}
+      />
     ));
   }
 
