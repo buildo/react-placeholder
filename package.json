@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/karma/bin/karma start",
-    "build": "rm -rf lib && mkdir lib && babel --loose --stage 0 --out-dir lib src",
+    "build": "rm -rf lib && mkdir lib && babel --loose --stage 0 --out-dir lib src && rsync -a --include '*/' --include '*.d.ts' --exclude '*' src/ lib/",
     "lint": "eslint src examples/examples.js",
     "preversion": "npm run lint && npm run test && npm run build-examples",
     "prepublish": "npm run build",
