@@ -1,5 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
 import TextRow from './TextRow';
 
 const widths = [97, 100, 94, 90, 98, 95, 98, 40];
@@ -43,7 +42,7 @@ export default class TextBlock extends React.Component {
     const { style, className } = this.props;
 
     return (
-      <div className={cx('text-block', className)} style={{ ...style, width: '100%' }}>
+      <div className={`text-block ${className}`} style={{ ...style, width: '100%' }}>
         {this.getRows()}
       </div>
     );

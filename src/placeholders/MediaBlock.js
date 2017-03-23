@@ -1,5 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
 import TextBlock from './TextBlock';
 import RoundShape from './RoundShape';
 
@@ -16,7 +15,7 @@ export default class MediaBlock extends React.Component {
   render() {
     const { className, style, color, rows } = this.props;
     return (
-      <div className={cx('media-block', className)} style={{ ...style, display: 'flex' }}>
+      <div className={`media-block ${className}`} style={{ ...style, display: 'flex' }}>
         <RoundShape
           color={color}
           style={{ minHeight: 55, width: 55, minWidth: 55, marginRight: 10 }}

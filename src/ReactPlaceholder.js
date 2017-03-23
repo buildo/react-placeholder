@@ -1,5 +1,5 @@
 import React from 'react';
-import omit from 'lodash/object/omit';
+import omit from 'lodash.omit';
 import placeholders from './placeholders';
 
 export default class ReactPlaceholder extends React.Component {
