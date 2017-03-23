@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReactPlaceholder renders the content when it's ready 1`] = `
+Array [
+  <div>
+    Some ready content
+</div>,
+]
+`;
+
+exports[`ReactPlaceholder renders the placeholder when the content is not ready 1`] = `
+Array [
+  <TextBlock
+    color="#CDCDCD"
+    rows={2}
+/>,
+]
+`;
