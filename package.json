@@ -47,10 +47,11 @@
     "react": "^15",
     "react-dom": "^15",
     "smooth-release": "^7.0.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.3"
+    "webpack": "^1",
+    "webpack-dev-server": "^1"
   },
   "peerDependencies": {
-    "react": ">= 0.12.x"
+    "react": "^0.14 || ^15",
+    "react-dom": "^0.14 || ^15"
   }
 }
