@@ -1,7 +1,0 @@
-node_modules
-coverage
-npm-debug.log
-.git
-test
-karma*
-.eslintrc
