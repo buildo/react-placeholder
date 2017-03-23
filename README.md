@@ -1,5 +1,6 @@
 # React Placeholder
-A React component to easily show a placeholder while loading. You can use one of the default set, or pass your own!
+A React component to easily replicate your page with nice placeholders while the content is loading.
+You can use a placeholder from the default set, or pass your own!
 
 ![image](https://cloud.githubusercontent.com/assets/691940/24140211/78406120-0e1f-11e7-9738-af2b2434c50e.png)
 
@@ -74,4 +75,3 @@ const awesomePlaceholder (
 you can style the placeholder by passing **```className```** or **```style```** or by using the built-in classes:
 
 *"text-block", "media-block", "text-row", "rect-shape", "round-shape".*
-

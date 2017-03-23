@@ -1,7 +1,7 @@
 {
   "name": "react-placeholder",
   "version": "0.0.3",
-  "description": "",
+  "description": "A React component to easily replicate your page with nice placeholders while the content is loading",
   "main": "lib",
   "scripts": {
     "test": "echo there is no test to run!",
