@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var webpackBase = require('./webpack.base');
-var assign = require('lodash/object').assign;
+var assign = require('lodash.assign');
 
 var paths = {
   SRC: path.resolve(__dirname, '../src'),
