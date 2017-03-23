@@ -1,5 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
 
 export default class TextRow extends React.Component {
 
@@ -30,7 +29,7 @@ export default class TextRow extends React.Component {
 
     return (
       <div
-        className={cx('text-row', className)}
+        className={`text-row ${className}`}
         style={{ ...defaultStyles, ...style }}
       />
     );

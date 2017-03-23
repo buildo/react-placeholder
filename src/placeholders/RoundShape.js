@@ -1,5 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
 
 export default class RoundShape extends React.Component {
 
@@ -20,7 +19,7 @@ export default class RoundShape extends React.Component {
     };
 
     return (
-      <div className={cx('round-shape', className)} style={{ ...defaultStyles, ...style }}/>
+      <div className={`round-shape ${className}`} style={{ ...defaultStyles, ...style }}/>
     );
   }
 
