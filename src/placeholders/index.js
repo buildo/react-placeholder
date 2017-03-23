@@ -5,16 +5,14 @@ import TextBlock from './TextBlock';
 import MediaBlock from './MediaBlock';
 // import Card from 'Card';
 
-export default {
-  textRow: TextRow,
-  round: RoundShape,
-  rect: RectShape,
-  text: TextBlock,
-  media: MediaBlock,
-  TextRow,
-  RoundShape,
-  RectShape,
-  TextBlock,
-  MediaBlock
-  // card:  Card
-};
+export TextRow from './TextRow';
+export RoundShape from './RoundShape';
+export RectShape from './RectShape';
+export TextBlock from './TextBlock';
+export MediaBlock from './MediaBlock';
+
+export const textRow = TextRow;
+export const round = RoundShape;
+export const rect = RectShape;
+export const text = TextBlock;
+export const media = MediaBlock;

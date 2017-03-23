@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo there is no test to run!",
-    "build": "rm -rf lib && mkdir lib && babel --loose --stage 0 --out-dir lib src && rsync -a --include '*/' --include '*.d.ts' --exclude '*' src/ lib/",
+    "build": "rm -rf lib && mkdir lib && babel src -d lib && rsync -a --include '*/' --include '*.d.ts' --exclude '*' src/ lib/",
     "lint": "eslint src examples/examples.js",
     "preversion": "npm run lint && npm run test && npm run build-examples",
     "prepublish": "npm run build",
@@ -36,17 +36,19 @@
     "lodash.omit": "^4.5.0"
   },
   "devDependencies": {
-    "babel": "^5.8.12",
-    "babel-eslint": "^7.0.0",
-    "babel-loader": "^5.3.2",
-    "eslint": "^3.7.1",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.0",
+    "babel-eslint": "^7.2.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-buildo": "^0.1.1",
+    "eslint": "^3.18.0",
     "eslint-config-buildo": "buildo/eslint-config",
-    "eslint-loader": "^1.1.1",
+    "eslint-loader": "^1.7.0",
     "react": "^15",
     "react-dom": "^15",
     "smooth-release": "^7.0.1",
-    "webpack": "^1.9.10",
-    "webpack-dev-server": "^1.8.2"
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.3"
   },
   "peerDependencies": {
     "react": ">= 0.12.x"
