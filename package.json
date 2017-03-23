@@ -9,8 +9,8 @@
     "lint": "eslint src examples/examples.js",
     "preversion": "npm run lint && npm run test && npm run build-examples",
     "prepublish": "npm run build",
-    "build-examples": "npm run clean && webpack --config examples/webpack.config.build.js --progress",
-    "start": "webpack-dev-server --config examples/webpack.config.js --progress --hot --inline",
+    "build-examples": "npm run clean && webpack --config examples/webpack.config.build.babel.js --progress",
+    "start": "webpack-dev-server --config examples/webpack.config.babel.js --progress --hot --inline",
     "clean": "rm -f examples/bundle.js examples/bundle.js.map",
     "release-version": "smooth-release"
   },
@@ -51,7 +51,6 @@
     "karma-coverage": "^0.3.1",
     "karma-mocha": "^0.1.10",
     "karma-webpack": "^1.5.1",
-    "lodash.assign": "^4.2.0",
     "mocha": "^2.2.5",
     "react": "^15",
     "react-dom": "^15",
