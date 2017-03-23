@@ -11,7 +11,8 @@
     "prepublish": "npm run build",
     "build-examples": "npm run clean && webpack --config examples/webpack.config.build.js --progress",
     "start": "webpack-dev-server --config examples/webpack.config.js --progress --hot --inline",
-    "clean": "rm -f examples/bundle.js examples/bundle.js.map"
+    "clean": "rm -f examples/bundle.js examples/bundle.js.map",
+    "release-version": "smooth-release"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "react": "^15",
     "react-dom": "^15",
     "require-dir": "^0.3.0",
+    "smooth-release": "^7.0.1",
     "webpack": "^1.9.10",
     "webpack-dev-server": "^1.8.2"
   },
