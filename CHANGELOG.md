@@ -13,10 +13,6 @@
 
 - Use relative heights [#10](https://github.com/buildo/react-placeholder/issues/10)
 
-#### New features:
-
-- Test [#5](https://github.com/buildo/react-placeholder/issues/5)
-
 ## [v0.0.3](https://github.com/buildo/react-placeholder/tree/v0.0.3) (2016-12-29)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v0.0.2...v0.0.3)
 
