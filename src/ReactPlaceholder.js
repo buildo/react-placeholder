@@ -1,5 +1,4 @@
 import React from 'react';
-import omit from 'lodash.omit';
 import * as placeholders from './placeholders';
 
 export default class ReactPlaceholder extends React.Component {
@@ -34,16 +33,17 @@ export default class ReactPlaceholder extends React.Component {
   )
 
   getFiller = () => {
-    const { type, customPlaceholder } = this.props;
+    // eslint-disable-next-line no-unused-vars
+    const { type, customPlaceholder, children, ready, firstLaunchOnly, ...rest } = this.props;
+
     if (customPlaceholder) {
       return customPlaceholder;
     }
 
     const Placeholder = placeholders[type];
-    const props = omit(this.props, ['children', 'ready', 'firstLaunchOnly', 'type']);
 
-    return <Placeholder {...props} />;
-  }
+    return <Placeholder {...rest} />;
+  };
 
   render() {
     return this.isReady() ? this.props.children : this.getFiller();
@@ -56,5 +56,4 @@ export default class ReactPlaceholder extends React.Component {
       });
     }
   }
-
 }
