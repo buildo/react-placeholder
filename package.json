@@ -53,7 +53,7 @@
     "react": "^15",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15",
-    "smooth-release": "^7.0.1",
+    "smooth-release": "^8.0.0",
     "webpack": "^1",
     "webpack-dev-server": "^1"
   },
