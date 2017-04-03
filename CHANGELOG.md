@@ -2,6 +2,13 @@
 
 
 
+## [v1.0.1](https://github.com/buildo/react-placeholder/tree/v1.0.1) (2017-04-03)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.0...v1.0.1)
+
+#### New features:
+
+- replace `lodash.omit` with ES6 destructuring [#21](https://github.com/buildo/react-placeholder/issues/21)
+
 ## [v1.0.0](https://github.com/buildo/react-placeholder/tree/v1.0.0) (2017-03-23)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v0.0.3...v1.0.0)
 
