@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class TextRow extends React.Component {
 
   static propTypes = {
-    className: React.PropTypes.string,
-    color: React.PropTypes.string,
-    lineSpacing: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.number
+    className: PropTypes.string,
+    color: PropTypes.string,
+    lineSpacing: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
     ]),
-    style: React.PropTypes.object
+    style: PropTypes.object
   }
 
   static defaultProps = {

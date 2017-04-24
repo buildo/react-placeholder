@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class RoundShape extends React.Component {
 
   static propTypes = {
-    color: React.PropTypes.string,
-    className: React.PropTypes.string,
-    style: React.PropTypes.object
+    color: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.object
   }
 
   render() {

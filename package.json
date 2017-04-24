@@ -37,7 +37,9 @@
   ],
   "homepage": "https://github.com/buildo/react-placeholder",
   "typings": "lib/index.d.ts",
-  "dependencies": {},
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.24.0",

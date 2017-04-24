@@ -1,21 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as placeholders from './placeholders';
 
 export default class ReactPlaceholder extends React.Component {
 
   static propTypes = {
-    children: React.PropTypes.oneOfType([
-      React.PropTypes.node,
-      React.PropTypes.element
+    children: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.element
     ]).isRequired,
-    ready: React.PropTypes.bool.isRequired,
-    firstLaunchOnly: React.PropTypes.bool,
-    type: React.PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
-    rows: React.PropTypes.number,
-    color: React.PropTypes.string,
-    customPlaceholder: React.PropTypes.oneOfType([
-      React.PropTypes.node,
-      React.PropTypes.element
+    ready: PropTypes.bool.isRequired,
+    firstLaunchOnly: PropTypes.bool,
+    type: PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
+    rows: PropTypes.number,
+    color: PropTypes.string,
+    customPlaceholder: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.element
     ])
   }
 
