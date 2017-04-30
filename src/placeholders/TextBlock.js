@@ -42,8 +42,10 @@ export default class TextBlock extends React.Component {
   render() {
     const { style, className } = this.props;
 
+    const classes = ['text-block', className].filter(c => c).join(' ');
+
     return (
-      <div className={`text-block ${className}`} style={{ ...style, width: '100%' }}>
+      <div className={classes} style={{ ...style, width: '100%' }}>
         {this.getRows()}
       </div>
     );
