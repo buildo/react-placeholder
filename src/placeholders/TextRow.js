@@ -28,9 +28,11 @@ export default class TextRow extends React.Component {
       marginTop: lineSpacing
     };
 
+    const classes = ['text-row', className].filter(c => c).join(' ');
+
     return (
       <div
-        className={`text-row ${className}`}
+        className={classes}
         style={{ ...defaultStyles, ...style }}
       />
     );

@@ -19,8 +19,10 @@ export default class RoundShape extends React.Component {
       height: '100%'
     };
 
+    const classes = ['round-shape', className].filter(c => c).join(' ');
+
     return (
-      <div className={`round-shape ${className}`} style={{ ...defaultStyles, ...style }}/>
+      <div className={classes} style={{ ...defaultStyles, ...style }}/>
     );
   }
 

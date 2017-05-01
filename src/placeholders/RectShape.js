@@ -19,8 +19,10 @@ export default class RectShape extends React.Component {
       marginRight: 10
     };
 
+    const classes = ['rect-shape', className].filter(c => c).join(' ');
+
     return (
-      <div className={`rect-shape ${className}`} style={{ ...defaultStyle, ...style }}/>
+      <div className={classes} style={{ ...defaultStyle, ...style }}/>
     );
   }
 
