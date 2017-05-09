@@ -22,7 +22,7 @@ export default class RectShape extends React.Component {
     const classes = ['rect-shape', className].filter(c => c).join(' ');
 
     return (
-      <div className={classes} style={{ ...defaultStyle, ...style }}/>
+      <div className={classes} style={{ ...defaultStyle, ...style }} />
     );
   }
 

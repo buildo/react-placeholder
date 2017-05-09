@@ -22,7 +22,7 @@ export default class RoundShape extends React.Component {
     const classes = ['round-shape', className].filter(c => c).join(' ');
 
     return (
-      <div className={classes} style={{ ...defaultStyles, ...style }}/>
+      <div className={classes} style={{ ...defaultStyles, ...style }} />
     );
   }
 
