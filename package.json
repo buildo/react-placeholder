@@ -5,7 +5,7 @@
   "main": "lib",
   "scripts": {
     "test": "jest",
-    "build": "rm -rf lib && mkdir lib && babel src -d lib && rsync -a --include '*/' --include '*.d.ts' --exclude '*' src/ lib/",
+    "build": "rm -rf lib && mkdir lib && node-sass src --importer -o lib && babel src -d lib && rsync -a --include '*/' --include '*.d.ts' --exclude '*' src/ lib/",
     "lint": "scriptoni lint src examples/examples.js",
     "lint-fix": "scriptoni lint src examples/examples.js --fix",
     "preversion": "npm run lint && npm run test && npm run build-examples",
@@ -50,6 +50,7 @@
     "enzyme": "^2.7.1",
     "eslint-loader": "^1.7.0",
     "jest": "^19.0.2",
+    "node-sass": "4.5.2",
     "react": "^15",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15",
