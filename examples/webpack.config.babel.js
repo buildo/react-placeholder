@@ -22,5 +22,5 @@ export default {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     })
-  ]
+  ].concat(webpackBase.plugins)
 };

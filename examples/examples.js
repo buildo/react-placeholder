@@ -9,6 +9,8 @@ import {
   RoundShape
 } from '../src/placeholders';
 
+import '../src/reactPlaceholder.scss';
+
 class Example extends React.Component {
 
   state = {
@@ -81,7 +83,7 @@ class Example extends React.Component {
           </ReactPlaceholder>
         </div>
 
-        <p>"media"</p>
+        <p>"media (with loading animation)"</p>
         <div className='ui input'>
           <span style={{ lineHeight: '40px' }}>
             nº of rows:
@@ -95,6 +97,7 @@ class Example extends React.Component {
         </div>
         <div className='ui segment'>
           <ReactPlaceholder
+            showLoadingAnimation
             ready={this.state.ready}
             type='media'
             rows={this.state.mediaBlockRows}
