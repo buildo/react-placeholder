@@ -1,0 +1,23 @@
+.show-loading-animation {
+  &.react-shape,
+  &.round-shape,
+  &.text-row,
+  .react-shape,
+  .round-shape,
+  .text-row {
+    animation: pulse 1.5s infinite;
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    opacity: .6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .6;
+  }
+}
