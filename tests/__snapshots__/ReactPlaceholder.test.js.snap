@@ -11,6 +11,7 @@ Array [
 exports[`ReactPlaceholder renders the placeholder when the content is not ready 1`] = `
 Array [
   <TextBlock
+    className={undefined}
     color="#CDCDCD"
     rows={2}
 />,
