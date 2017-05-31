@@ -5,21 +5,20 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 export const paths = {
   SRC: path.resolve(__dirname, '../src'),
   EXAMPLES: path.resolve(__dirname, '.'),
+  BUILD: path.resolve(__dirname, './build'),
   ENTRY: path.resolve(__dirname, './examples.js')
 };
 
 export default {
   output: {
-    path: paths.EXAMPLES,
+    path: paths.BUILD,
     filename: 'bundle.js'
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       template: 'examples/index.html',
-      inject: false,
-      gzip: '',
-      buildPath: ''
+      inject: true
     }),
     new ExtractTextPlugin('style', 'style.[hash].min.css')
   ],
