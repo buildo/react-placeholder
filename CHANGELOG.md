@@ -2,6 +2,17 @@
 
 
 
+## [v1.0.3](https://github.com/buildo/react-placeholder/tree/v1.0.3) (2017-05-31)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.2...v1.0.3)
+
+#### New features:
+
+- animation support [#27](https://github.com/buildo/react-placeholder/issues/27)
+
+#### Fixes (bugs & defects):
+
+- Rectangle placeholder without className sets class to undefined [#24](https://github.com/buildo/react-placeholder/issues/24)
+
 ## [v1.0.2](https://github.com/buildo/react-placeholder/tree/v1.0.2) (2017-04-25)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.1...v1.0.2)
 
