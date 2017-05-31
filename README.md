@@ -18,7 +18,7 @@ React.renderComponent(
 
 
 
-[**Live Demo**](https://rawgit.com/buildo/react-placeholder/master/examples/index.html)
+[**Live Demo**](https://rawgit.com/buildo/react-placeholder/master/examples/build/index.html)
 
 you can find more examples [here](https://github.com/buildo/react-placeholder/tree/master/examples)
 
