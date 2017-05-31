@@ -14,6 +14,7 @@ export default class ReactPlaceholder extends React.Component {
     type: PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
     rows: PropTypes.number,
     color: PropTypes.string,
+    showLoadingAnimation: PropTypes.bool,
     customPlaceholder: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.element
@@ -34,16 +35,22 @@ export default class ReactPlaceholder extends React.Component {
   )
 
   getFiller = () => {
-    // eslint-disable-next-line no-unused-vars
-    const { type, customPlaceholder, children, ready, firstLaunchOnly, ...rest } = this.props;
+    const {
+      firstLaunchOnly, children, ready, className, // eslint-disable-line no-unused-vars
+      type, customPlaceholder, showLoadingAnimation, ...rest
+    } = this.props;
 
     if (customPlaceholder) {
       return customPlaceholder;
     }
 
+    const classes = showLoadingAnimation ?
+      ['show-loading-animation', className].filter(c => c).join(' ') :
+      className;
+
     const Placeholder = placeholders[type];
 
-    return <Placeholder {...rest} />;
+    return <Placeholder {...rest} className={classes} />;
   };
 
   render() {

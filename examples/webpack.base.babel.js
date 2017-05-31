@@ -1,4 +1,6 @@
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export const paths = {
   SRC: path.resolve(__dirname, '../src'),
@@ -12,6 +14,16 @@ export default {
     filename: 'bundle.js'
   },
 
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'examples/index.html',
+      inject: false,
+      gzip: '',
+      buildPath: ''
+    }),
+    new ExtractTextPlugin('style', 'style.[hash].min.css')
+  ],
+
   module: {
     loaders: [
       {
@@ -19,6 +31,15 @@ export default {
         loader: 'babel',
         include: [paths.SRC, paths.EXAMPLES],
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css')
+      },
+      // SASS
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap')
       }
     ],
     preLoaders: [

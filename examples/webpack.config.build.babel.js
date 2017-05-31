@@ -15,6 +15,6 @@ export default {
         warnings: false
       }
     })
-  ]
+  ].concat(webpackBase.plugins)
 
 };

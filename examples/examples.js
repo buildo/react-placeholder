@@ -9,6 +9,8 @@ import {
   RoundShape
 } from '../src/placeholders';
 
+import '../src/reactPlaceholder.scss';
+
 class Example extends React.Component {
 
   state = {
@@ -74,14 +76,14 @@ class Example extends React.Component {
           <ReactPlaceholder
             ready={this.state.ready}
             rows={this.state.textBlockRows}
-            color='#F0F0F0'
+            color='#E0E0E0'
             className='my-text-block'
           >
             {realComponent}
           </ReactPlaceholder>
         </div>
 
-        <p>"media"</p>
+        <p>"media (with loading animation)"</p>
         <div className='ui input'>
           <span style={{ lineHeight: '40px' }}>
             nº of rows:
@@ -95,10 +97,10 @@ class Example extends React.Component {
         </div>
         <div className='ui segment'>
           <ReactPlaceholder
+            showLoadingAnimation
             ready={this.state.ready}
             type='media'
             rows={this.state.mediaBlockRows}
-            color='#F0F0F0'
             className='my-text-block'
           >
             {realComponent}
@@ -110,7 +112,7 @@ class Example extends React.Component {
           <ReactPlaceholder
             ready={this.state.ready}
             type='textRow'
-            color='#F0F0F0'
+            color='#E0E0E0'
             className='my-text-row'
           >
             {realComponent}
@@ -122,7 +124,7 @@ class Example extends React.Component {
           <ReactPlaceholder
             ready={this.state.ready}
             type='rect'
-            color='#F0F0F0'
+            color='#E0E0E0'
             style={{ width: 50, height: 50 }}
             className='my-rect'
           >
@@ -135,7 +137,7 @@ class Example extends React.Component {
           <ReactPlaceholder
             ready={this.state.ready}
             type='round'
-            color='#F0F0F0'
+            color='#E0E0E0'
             style={{ width: 50, height: 50 }}
             className='my-round'
           >
@@ -165,7 +167,7 @@ class Example extends React.Component {
           <ReactPlaceholder
             ready={this.state.readyFirstLaunch}
             rows={4}
-            color='#F0F0F0'
+            color='#E0E0E0'
             className='my-text-block'
             firstLaunchOnly
           >
@@ -178,7 +180,7 @@ class Example extends React.Component {
         <p>TextBlock</p>
         <div className='ui segment'>
           <TextBlock
-            color='#F0F0F0'
+            color='#E0E0E0'
             rows={4}
             className='my-text-row'
           />
@@ -186,7 +188,7 @@ class Example extends React.Component {
         <p>MediaBlock</p>
         <div className='ui segment'>
           <MediaBlock
-            color='#F0F0F0'
+            color='#E0E0E0'
             rows={4}
             className='my-text-row'
           />
@@ -194,7 +196,7 @@ class Example extends React.Component {
         <p>TextRow</p>
         <div className='ui segment'>
           <TextRow
-            color='#F0F0F0'
+            color='#E0E0E0'
             className='my-text-row'
           />
         </div>
@@ -202,7 +204,7 @@ class Example extends React.Component {
         <p>RectShape</p>
         <div className='ui segment'>
           <RectShape
-            color='#F0F0F0'
+            color='#E0E0E0'
             className='my-text-row'
             style={{ width: 50, height: 50 }}
           />
@@ -211,7 +213,7 @@ class Example extends React.Component {
         <p>RoundShape</p>
         <div className='ui segment'>
           <RoundShape
-            color='#F0F0F0'
+            color='#E0E0E0'
             className='my-text-row'
             style={{ width: 50, height: 50 }}
           />
