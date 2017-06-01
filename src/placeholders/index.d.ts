@@ -33,7 +33,7 @@ interface TextBlockProps {
   color: string,
   style?: {},
   className?: string,
-  lineSpacing: string | number
+  lineSpacing?: string | number
 }
 export declare class TextBlock extends Component<TextBlockProps, void> { }
 
@@ -42,6 +42,6 @@ interface TextRowProps {
   className?: string,
   color?: string,
   style?: {},
-  lineSpacing: string | number
+  lineSpacing?: string | number
 }
 export declare class TextRow extends Component<TextRowProps, void> { }
