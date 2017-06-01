@@ -2,6 +2,13 @@
 
 
 
+## [v1.0.4](https://github.com/buildo/react-placeholder/tree/v1.0.4) (2017-06-01)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.3...v1.0.4)
+
+#### Fixes (bugs & defects):
+
+- Update typings to make lineSpacing prop optional [#32](https://github.com/buildo/react-placeholder/issues/32)
+
 ## [v1.0.3](https://github.com/buildo/react-placeholder/tree/v1.0.3) (2017-05-31)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.2...v1.0.3)
 
