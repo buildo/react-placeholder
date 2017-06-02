@@ -72,6 +72,24 @@ const awesomePlaceholder (
 </ReactPlaceholder>
 ```
 
+### Animation
+`react-placeholder` already comes with one default pulse animation to better tell the user that the page is loading.
+The animation is defined in a separate CSS file so, in order to enable it, you should import that style in your project like this:
+
+```js
+import 'react-placeholder/lib/reactPlaceholder.css';
+```
+
+Once you've done this, you can simply pass the boolean prop `showLoadingAnimation` to tell `ReactPlaceholder` to animate itself:
+
+```jsx
+import 'react-placeholder/lib/reactPlaceholder.css';
+
+<ReactPlaceholder showLoadingAnimation ready={this.state.ready} type="media" rows={5}>
+  <p>This is a Test.</p>
+</ReactPlaceholder>
+```
+
 ### Style
 you can style the placeholder by passing **```className```** or **```style```** or by using the built-in classes:
 
