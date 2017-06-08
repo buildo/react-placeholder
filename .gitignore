@@ -3,3 +3,6 @@ coverage
 npm-debug.log
 lib
 .eslintcache
+.idea
+.DS_Store
+examples/build/**

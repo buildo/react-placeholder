@@ -43,8 +43,11 @@ class Example extends React.Component {
     };
 
     const customPlaceholder = (
-      <div style={{ color: 'blue', backgroundColor: 'yellow' }}>
+      <div>
         I'm a custom filler!!
+        <TextRow className="qwe" color="#edeff2" style={{ width: '100%', height: '20px' }} />
+        <TextRow className="qwe" color="#edeff2" style={{ width: '100%', height: '20px' }} />
+        <TextRow className="qwe" color="#edeff2" style={{ width: '100%', height: '20px' }} />
       </div>
     );
 
@@ -151,6 +154,7 @@ class Example extends React.Component {
         </button>
         <div className='ui segment'>
           <ReactPlaceholder
+            showLoadingAnimation
             ready={this.state.readyCustom}
             customPlaceholder={customPlaceholder}
           >

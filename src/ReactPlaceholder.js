@@ -40,13 +40,19 @@ export default class ReactPlaceholder extends React.Component {
       type, customPlaceholder, showLoadingAnimation, ...rest
     } = this.props;
 
-    if (customPlaceholder) {
-      return customPlaceholder;
-    }
-
     const classes = showLoadingAnimation ?
       ['show-loading-animation', className].filter(c => c).join(' ') :
       className;
+    
+    if (customPlaceholder && React.isValidElement(customPlaceholder)) {
+      const mergedCustomClasses =
+        [customPlaceholder.props.className, classes].filter(c => c).join(' ');
+      return React.cloneElement(customPlaceholder,
+        { className: mergedCustomClasses });
+    } else if (React.isValidElement()) {
+      throw new Error('ReferenceError',
+        'Custom placeholder is not a valid component.');
+    }
 
     const Placeholder = placeholders[type];
 
