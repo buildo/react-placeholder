@@ -1,8 +1,8 @@
 .show-loading-animation {
-  &.react-shape,
+  &.rect-shape,
   &.round-shape,
   &.text-row,
-  .react-shape,
+  .rect-shape,
   .round-shape,
   .text-row {
     animation: react-placeholder-pulse 1.5s infinite;
