@@ -49,7 +49,7 @@ export default class ReactPlaceholder extends React.Component {
         [customPlaceholder.props.className, classes].filter(c => c).join(' ');
       return React.cloneElement(customPlaceholder,
         { className: mergedCustomClasses });
-    } else if (!React.isValidElement()) {
+    } else if (!React.isValidElement(customPlaceholder)) {
       throw new Error('ReferenceError',
         'Custom placeholder is not a valid component.');
     }
