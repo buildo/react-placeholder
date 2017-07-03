@@ -2,6 +2,13 @@
 
 
 
+## [v1.0.5](https://github.com/buildo/react-placeholder/tree/v1.0.5) (2017-06-26)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.4...v1.0.5)
+
+#### Fixes (bugs & defects):
+
+- Typo in CSS selector for react-shape animation [#33](https://github.com/buildo/react-placeholder/issues/33)
+
 ## [v1.0.4](https://github.com/buildo/react-placeholder/tree/v1.0.4) (2017-06-01)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.3...v1.0.4)
 
