@@ -10,15 +10,15 @@
     }
   }
 
-@keyframes react-placeholder-pulse {
-  0% {
-    opacity: .6;
+  @keyframes react-placeholder-pulse {
+    0% {
+      opacity: .6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .6;
+    }
   }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: .6;
-  }
-}
 )
