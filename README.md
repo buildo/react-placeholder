@@ -1,4 +1,6 @@
 # React Placeholder
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/buildo/react-placeholder.svg)](https://greenkeeper.io/)
 A React component to easily replicate your page with nice placeholders while the content is loading.
 You can use a placeholder from the default set, or pass your own!
 
