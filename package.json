@@ -2,7 +2,7 @@
   "name": "react-placeholder",
   "version": "1.0.5",
   "description": "A React component to easily replicate your page with nice placeholders while the content is loading",
-  "main": "src",
+  "main": "lib",
   "scripts": {
     "test": "jest",
     "build": "rm -rf lib && mkdir lib && node-sass src --importer -o lib && babel src -d lib && rsync -a --include '*/' --include '*.d.ts' --exclude '*' src/ lib/",
