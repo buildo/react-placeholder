@@ -6,6 +6,7 @@ You can use a placeholder from the default set, or pass your own!
 
 ```jsx
 import ReactPlaceholder from 'react-placeholder';
+import "react-placeholder/lib/reactPlaceholder.css";
 
 React.renderComponent(
   <div>
