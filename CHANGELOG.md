@@ -2,6 +2,19 @@
 
 
 
+## [v1.0.6](https://github.com/buildo/react-placeholder/tree/v1.0.6) (2017-08-03)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.5...v1.0.6)
+
+#### Fixes (bugs & defects):
+
+- @types/react > 33 complains [#41](https://github.com/buildo/react-placeholder/issues/41)
+- Animations not working with custom placeholders. [#34](https://github.com/buildo/react-placeholder/issues/34)
+
+#### New features:
+
+- Action required: Greenkeeper could not be activated 🚨 [#39](https://github.com/buildo/react-placeholder/issues/39)
+- Action required: Greenkeeper could not be activated 🚨 [#38](https://github.com/buildo/react-placeholder/issues/38)
+
 ## [v1.0.5](https://github.com/buildo/react-placeholder/tree/v1.0.5) (2017-06-26)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.4...v1.0.5)
 
