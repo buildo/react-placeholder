@@ -8,6 +8,7 @@ interface ReactPlaceholderProps {
   type?: 'text' |  'media' | 'textRow' | 'rect' | 'round',
   rows?: number,
   color?: string,
+  showLoadingAnimation?: boolean,
   customPlaceholder?: ReactNode | ReactElement<any>
 }
 
