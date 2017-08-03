@@ -1,4 +1,4 @@
-import { Component, ReactChild, ReactNode, ReactElement } from 'react';
+import { ComponentClass, ReactChild, ReactNode, ReactElement } from 'react';
 
 interface ReactPlaceholderProps {
   // FIXME: children is marked as optional because of https://github.com/Microsoft/TypeScript/issues/8588
@@ -8,6 +8,7 @@ interface ReactPlaceholderProps {
   type?: 'text' |  'media' | 'textRow' | 'rect' | 'round',
   rows?: number,
   color?: string,
+  showLoadingAnimation?: boolean,
   customPlaceholder?: ReactNode | ReactElement<any>
 }
 
@@ -15,6 +16,5 @@ interface ReactPlaceholderState {
   ready: boolean
 }
 
-declare class ReactPlaceholder extends Component<ReactPlaceholderProps, ReactPlaceholderState> { }
-
+declare const ReactPlaceholder: ComponentClass<ReactPlaceholderProps>;
 export default ReactPlaceholder;

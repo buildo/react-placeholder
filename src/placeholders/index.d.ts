@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { ComponentClass } from 'react';
   
 export { TextRow as textRow };
 export { RectShape as rect };
@@ -11,14 +11,14 @@ interface RectShapeProps {
   className?: string,
   style?: {}
 }
-export declare class RectShape extends Component<RectShapeProps, void> { }
+export declare const RectShape: ComponentClass<RectShapeProps>;
 
 interface RoundShapeProps {
   color?: string,
   className?: string,
   style?: {}
 }
-export declare class RoundShape extends Component<RoundShapeProps, void> { }
+export declare const RoundShape: ComponentClass<RoundShapeProps>;
 
 interface MediaBlockProps {
   rows: number,
@@ -26,7 +26,7 @@ interface MediaBlockProps {
   style?: {},
   className?: string
 }
-export declare class MediaBlock extends Component<MediaBlockProps, void> { }
+export declare const MediaBlock: ComponentClass<MediaBlockProps>;
 
 interface TextBlockProps {
   rows: number,
@@ -35,7 +35,7 @@ interface TextBlockProps {
   className?: string,
   lineSpacing?: string | number
 }
-export declare class TextBlock extends Component<TextBlockProps, void> { }
+export declare const TextBlock: ComponentClass<TextBlockProps>;
 
 interface TextRowProps {
   invisible?: boolean,
@@ -44,4 +44,4 @@ interface TextRowProps {
   style?: {},
   lineSpacing?: string | number
 }
-export declare class TextRow extends Component<TextRowProps, void> { }
+export declare const TextRow: ComponentClass<TextRowProps>;
