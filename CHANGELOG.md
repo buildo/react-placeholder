@@ -2,6 +2,13 @@
 
 
 
+## [v1.0.7](https://github.com/buildo/react-placeholder/tree/v1.0.7) (2017-10-16)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.6...v1.0.7)
+
+#### New features:
+
+- error in ready [#44](https://github.com/buildo/react-placeholder/issues/44)
+
 ## [v1.0.6](https://github.com/buildo/react-placeholder/tree/v1.0.6) (2017-08-03)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.5...v1.0.6)
 
