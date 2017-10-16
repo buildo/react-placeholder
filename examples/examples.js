@@ -14,6 +14,7 @@ import '../src/reactPlaceholder.scss';
 class Example extends React.Component {
 
   state = {
+    delay: 1000,
     ready: false,
     readyCustom: false,
     readyFirstLaunch: false,
@@ -170,6 +171,34 @@ class Example extends React.Component {
             color='#E0E0E0'
             className='my-text-block'
             firstLaunchOnly
+          >
+            {realComponent}
+          </ReactPlaceholder>
+        </div>
+
+        <h1>Using ReactPlaceholder with a delay</h1>
+        <button onClick={this.toggleReadyFirstLaunch} style={buttonStyle}>
+          {this.state.readyFirstLaunch ? 'set loading' : 'set ready'}
+        </button>
+        <p>Will show filler only after specified delay</p>
+        <div className='ui input'>
+          <span style={{ lineHeight: '40px' }}>
+            delay (ms):
+          </span>
+          <input
+            type='number'
+            value={this.state.delay}
+            onChange={this.onChange('delay')}
+            style={{ width: 80, marginLeft: 5 }}
+          />
+        </div>
+        <div className='ui segment'>
+          <ReactPlaceholder
+            ready={this.state.readyFirstLaunch}
+            delay={this.state.delay}
+            rows={4}
+            color='#E0E0E0'
+            className='my-text-block'
           >
             {realComponent}
           </ReactPlaceholder>

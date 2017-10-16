@@ -36,6 +36,7 @@ children:             PropTypes.oneOfType([
                          PropTypes.element
                       ]).isRequired,
 ready:                PropTypes.bool.isRequired,
+delay:                PropTypes.number,
 firstLaunchOnly:      PropTypes.bool,
 showLoadingAnimation: PropTypes.bool,
 type:                 PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
@@ -72,6 +73,11 @@ const awesomePlaceholder (
   <MyComponent />
 </ReactPlaceholder>
 ```
+
+### Delay
+You can pass an optional `delay` prop which specifies the time (in milliseconds) `react-placeholder` should wait before displaying the placeholder element. This is useful if you want to show a placeholder for slower connections while avoiding a brief "flash" on faster connections.
+
+Note that this delay will __not__ affect the initial render, only subsequent "ready" state changes. Setting the `firsLaunchOnly` prop to `true` will also disable this feature.
 
 ### Animation
 `react-placeholder` already comes with one default pulse animation to better tell the user that the page is loading.
