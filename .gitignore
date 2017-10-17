@@ -3,4 +3,3 @@ coverage
 npm-debug.log
 lib
 .eslintcache
-.DS_Store
