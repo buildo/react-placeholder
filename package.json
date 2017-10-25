@@ -39,7 +39,7 @@
   "homepage": "https://github.com/buildo/react-placeholder",
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.6.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -48,15 +48,16 @@
     "babel-loader": "^6.4.1",
     "babel-preset-buildo": "^0.1.1",
     "css-loader": "^0.28.3",
-    "enzyme": "^2.7.1",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.2",
     "eslint-loader": "^1.7.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.28.0",
-    "jest": "^19.0.2",
+    "jest": "^21.2.1",
     "node-sass": "4.5.2",
-    "react": "^15",
-    "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15",
+    "react": "^16",
+    "react-dom": "^16",
+    "react-test-renderer": "^16.0.0",
     "sass-loader": "^4.1.1",
     "scriptoni": "^0.4.4",
     "smooth-release": "^8.0.0",
