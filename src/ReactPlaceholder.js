@@ -58,13 +58,21 @@ export default class ReactPlaceholder extends React.Component {
   };
 
   setNotReady = () => {
-    this.timeout = setTimeout(() => {
+    const { delay } = this.props;
+
+    if (delay > 0) {
+      this.timeout = setTimeout(() => {
+        this.setState({ ready: false });
+      }, delay);
+    } else {
       this.setState({ ready: false });
-    }, this.props.delay);
+    }
   }
 
   setReady = () => {
-    clearTimeout(this.timeout);
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
 
     if (!this.state.ready) {
       this.setState({ ready: true });
