@@ -2,6 +2,14 @@
 
 
 
+## [v1.0.8](https://github.com/buildo/react-placeholder/tree/v1.0.8) (2017-10-25)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.7...v1.0.8)
+
+#### New features:
+
+- Add "delay" prop to show the placeholder for a minimum time [#49](https://github.com/buildo/react-placeholder/issues/49)
+- React 16 warning message [#46](https://github.com/buildo/react-placeholder/issues/46)
+
 ## [v1.0.7](https://github.com/buildo/react-placeholder/tree/v1.0.7) (2017-10-16)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.6...v1.0.7)
 
