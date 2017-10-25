@@ -9,6 +9,7 @@ export default class ReactPlaceholder extends React.Component {
       PropTypes.node,
       PropTypes.element
     ]).isRequired,
+    delay: PropTypes.number,
     ready: PropTypes.bool.isRequired,
     firstLaunchOnly: PropTypes.bool,
     type: PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
@@ -22,6 +23,7 @@ export default class ReactPlaceholder extends React.Component {
   }
 
   static defaultProps = {
+    delay: 0,
     type: 'text',
     color: '#CDCDCD'
   }
@@ -29,10 +31,6 @@ export default class ReactPlaceholder extends React.Component {
   state = {
     ready: this.props.ready
   }
-
-  isReady = () => (
-    this.props.firstLaunchOnly ? this.state.ready : this.props.ready
-  )
 
   getFiller = () => {
     const {
@@ -59,15 +57,37 @@ export default class ReactPlaceholder extends React.Component {
     return <Placeholder {...rest} className={classes} />;
   };
 
+  setNotReady = () => {
+    const { delay } = this.props;
+
+    if (delay > 0) {
+      this.timeout = setTimeout(() => {
+        this.setState({ ready: false });
+      }, delay);
+    } else {
+      this.setState({ ready: false });
+    }
+  }
+
+  setReady = () => {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+
+    if (!this.state.ready) {
+      this.setState({ ready: true });
+    }
+  }
+
   render() {
-    return this.isReady() ? this.props.children : this.getFiller();
+    return this.state.ready ? this.props.children : this.getFiller();
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!this.state.ready) {
-      this.setState({
-        ready: nextProps.ready
-      });
+    if (!this.props.firstLaunchOnly && this.state.ready && !nextProps.ready) {
+      this.setNotReady();
+    } else if (nextProps.ready) {
+      this.setReady();
     }
   }
 }
