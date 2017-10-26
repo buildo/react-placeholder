@@ -55,6 +55,7 @@
     "html-webpack-plugin": "^2.28.0",
     "jest": "^21.2.1",
     "node-sass": "4.5.2",
+    "raf": "^3.4.0",
     "react": "^16",
     "react-dom": "^16",
     "react-test-renderer": "^16.0.0",
@@ -68,5 +69,8 @@
   "peerDependencies": {
     "react": "^0.14 || ^15 || ^16",
     "react-dom": "^0.14 || ^15 || ^16"
+  },
+  "jest": {
+    "setupFiles": ["raf/polyfill"]
   }
 }
