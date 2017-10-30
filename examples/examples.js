@@ -19,7 +19,8 @@ class Example extends React.Component {
     readyCustom: false,
     readyFirstLaunch: false,
     textBlockRows: 6,
-    mediaBlockRows: 4
+    mediaBlockRows: 4,
+    holdPlaceholder: 2000
   };
 
   onChange = (key) => ({ target: { value } }) => {
@@ -171,6 +172,34 @@ class Example extends React.Component {
             color='#E0E0E0'
             className='my-text-block'
             firstLaunchOnly
+          >
+            {realComponent}
+          </ReactPlaceholder>
+        </div>
+
+        <h1>Using ReactPlaceholder with a hold placeholder time</h1>
+        <button onClick={this.toggleReadyFirstLaunch} style={buttonStyle}>
+          {this.state.readyFirstLaunch ? 'set loading' : 'set ready'}
+        </button>
+        <p>Will show the content only after specified time and it's ready</p>
+        <div className='ui input'>
+          <span style={{ lineHeight: '40px' }}>
+            holdPlaceholder (ms):
+          </span>
+          <input
+            type='number'
+            value={this.state.holdPlaceholder}
+            onChange={this.onChange('holdPlaceholder')}
+            style={{ width: 80, marginLeft: 5 }}
+          />
+        </div>
+        <div className='ui segment'>
+          <ReactPlaceholder
+            ready={this.state.readyFirstLaunch}
+            holdPlaceholder={this.state.holdPlaceholder}
+            rows={4}
+            color='#E0E0E0'
+            className='my-text-block'
           >
             {realComponent}
           </ReactPlaceholder>

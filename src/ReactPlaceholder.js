@@ -95,7 +95,7 @@ export default class ReactPlaceholder extends React.Component {
       if (this.props.holdPlaceholder) {
         clearTimeout(this.holdPlaceholderTimeout);
         this.setState({ holdPlaceholder: true });
-        this.holdPlaceholderTimeout = setTimeout(() => this.setState({ holdPlaceholder: false }), nextProps.holdPlaceholder);  
+        this.holdPlaceholderTimeout = setTimeout(() => this.setState({ holdPlaceholder: false }), nextProps.holdPlaceholder);
       }
     } else if (nextProps.ready) {
       this.setReady();
