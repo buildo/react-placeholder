@@ -19,22 +19,25 @@ export default class ReactPlaceholder extends React.Component {
     customPlaceholder: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.element
-    ])
+    ]),
+    holdPlaceholder: PropTypes.number
   }
 
   static defaultProps = {
     delay: 0,
     type: 'text',
-    color: '#CDCDCD'
+    color: '#CDCDCD',
+    holdPlaceholder: 0
   }
 
   state = {
-    ready: this.props.ready
+    ready: this.props.ready,
+    holdPlaceholder: this.props.holdPlaceholder > 0
   }
 
   getFiller = () => {
     const {
-      firstLaunchOnly, children, ready, className, // eslint-disable-line no-unused-vars
+      firstLaunchOnly, children, ready, className, holdPlaceholder, // eslint-disable-line no-unused-vars
       type, customPlaceholder, showLoadingAnimation, ...rest
     } = this.props;
 
@@ -80,14 +83,28 @@ export default class ReactPlaceholder extends React.Component {
   }
 
   render() {
-    return this.state.ready ? this.props.children : this.getFiller();
+    const { ready, holdPlaceholder } = this.state;
+    return ready && !holdPlaceholder ? this.props.children : this.getFiller();
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!this.props.firstLaunchOnly && this.state.ready && !nextProps.ready) {
-      this.setNotReady();
+    if (!this.props.firstLaunchOnly && !nextProps.ready) {
+      if (this.state.ready) {
+        this.setNotReady();
+      }
+      if (this.props.holdPlaceholder) {
+        clearTimeout(this.holdPlaceholderTimeout);
+        this.setState({ holdPlaceholder: true });
+        this.holdPlaceholderTimeout = setTimeout(() => this.setState({ holdPlaceholder: false }), nextProps.holdPlaceholder);  
+      }
     } else if (nextProps.ready) {
       this.setReady();
+    }
+  }
+
+  componentWillMount() {
+    if (this.props.holdPlaceholder > 0) {
+      this.holdPlaceholderTimeout = setTimeout(() => this.setState({ holdPlaceholder: false }), this.props.holdPlaceholder);
     }
   }
 }
