@@ -1,8 +1,8 @@
-import { ComponentClass, ReactChild, ReactNode, ReactElement } from 'react';
+import { ComponentClass, ReactNode, ReactElement } from 'react';
 
 interface ReactPlaceholderProps {
   // FIXME: children is marked as optional because of https://github.com/Microsoft/TypeScript/issues/8588
-  children?: ReactChild,
+  children?: ReactNode,
   ready: boolean,
   delay?: number,
   firstLaunchOnly?: boolean,
