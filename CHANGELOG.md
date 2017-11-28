@@ -2,6 +2,14 @@
 
 
 
+## [v1.0.9](https://github.com/buildo/react-placeholder/tree/v1.0.9) (2017-11-28)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.8...v1.0.9)
+
+#### New features:
+
+- install question [#58](https://github.com/buildo/react-placeholder/issues/58)
+- Bug with delay when the component is already mounted [#54](https://github.com/buildo/react-placeholder/issues/54)
+
 ## [v1.0.8](https://github.com/buildo/react-placeholder/tree/v1.0.8) (2017-10-25)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.7...v1.0.8)
 
