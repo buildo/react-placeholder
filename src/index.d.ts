@@ -10,7 +10,8 @@ interface ReactPlaceholderProps {
   rows?: number,
   color?: string,
   showLoadingAnimation?: boolean,
-  customPlaceholder?: ReactNode | ReactElement<any>
+  customPlaceholder?: ReactNode | ReactElement<any>,
+  holdPlaceholder?: number,
 }
 
 interface ReactPlaceholderState {

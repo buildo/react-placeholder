@@ -8,6 +8,22 @@ Array [
 ]
 `;
 
+exports[`ReactPlaceholder renders the placeholder again for a while even if the content is ready 1`] = `
+Array [
+  <div>
+    Some ready content
+  </div>,
+]
+`;
+
+exports[`ReactPlaceholder renders the placeholder for a while even if the content is ready 1`] = `
+Array [
+  <div>
+    Some ready content
+  </div>,
+]
+`;
+
 exports[`ReactPlaceholder renders the placeholder only after the specified delay 1`] = `
 Array [
   <TextBlock

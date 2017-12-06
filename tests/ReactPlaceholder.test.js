@@ -53,4 +53,51 @@ describe('ReactPlaceholder', () => {
     expect(tree.getElements()).toMatchSnapshot();
   });
 
+  it('renders the placeholder for a while even if the content is ready', () => {
+    const content = <div>Some ready content</div>;
+    const tree = shallow(
+      <ReactPlaceholder
+        ready
+        type='text'
+        rows={2}
+        holdPlaceholder={10000}
+      >
+        {content}
+      </ReactPlaceholder>
+    );
+    expect(tree.contains(content)).toBe(false);
+    jest.runAllTimers();
+    tree.update();
+    expect(tree.contains(content)).toBe(true);
+    expect(tree.getElements()).toMatchSnapshot();
+  });
+
+  it('renders the placeholder again for a while even if the content is ready', () => {
+    const content = <div>Some ready content</div>;
+    const tree = shallow(
+      <ReactPlaceholder
+        ready
+        type='text'
+        rows={2}
+        holdPlaceholder={10000}
+      >
+        {content}
+      </ReactPlaceholder>
+    );
+    expect(tree.contains(content)).toBe(false);
+    jest.runAllTimers();
+    tree.update();
+    expect(tree.contains(content)).toBe(true);
+    tree.setProps({ ready: false });
+    tree.update();
+    expect(tree.contains(content)).toBe(false);
+    tree.setProps({ ready: true });
+    tree.update();
+    expect(tree.contains(content)).toBe(false);
+    jest.runAllTimers();
+    tree.update();
+    expect(tree.contains(content)).toBe(true);
+    expect(tree.getElements()).toMatchSnapshot();
+  });
+
 });
