@@ -41,7 +41,14 @@
 You can use your own custom placeholder:
 
 ```js
-<ReactPlaceholder customPlaceholder={<CustomPlaceholder />} ready={false}>
+<ReactPlaceholder customPlaceholder={<CustomPlaceholder />} ready={false} />
+```
+
+### Animation
+Pass `showLoadingAnimation={true}` to enable the default loading animation:
+
+```js
+<ReactPlaceholder showLoadingAnimation={true} type='media' ready={false} rows={4}>
   <RealComponent />
 </ReactPlaceholder>
 ```
