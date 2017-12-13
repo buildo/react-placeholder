@@ -10,7 +10,7 @@
     "lint-fix": "scriptoni lint src --fix",
     "preversion": "npm run lint && npm run test",
     "prepublish": "npm run build",
-    "build-examples": "styleguidist build",
+    "update-examples": "styleguidist build && git add docs && git commit -m 'update gh-pages' && git push",
     "start": "styleguidist server",
     "release-version": "smooth-release"
   },
