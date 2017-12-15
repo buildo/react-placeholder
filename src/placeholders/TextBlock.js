@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextRow from './TextRow';
 
-const widths = [97, 100, 94, 90, 98, 95, 98, 40];
-
 export default class TextBlock extends React.Component {
 
   static propTypes = {
@@ -13,12 +11,17 @@ export default class TextBlock extends React.Component {
       PropTypes.string,
       PropTypes.number
     ]),
+    widths: PropTypes.arrayOf(PropTypes.number),
     style: PropTypes.object,
     className: PropTypes.string
   }
 
+  static defaultProps = {
+    widths: [97, 100, 94, 90, 98, 95, 98, 40]
+  }
+
   getRowStyle = (i) => {
-    const { rows, color } = this.props;
+    const { rows, color, widths } = this.props;
 
     return {
       backgroundColor: color,
