@@ -15,6 +15,18 @@ Array [
     color="#CDCDCD"
     delay={10000}
     rows={2}
+    widths={
+      Array [
+        97,
+        100,
+        94,
+        90,
+        98,
+        95,
+        98,
+        40,
+      ]
+    }
   />,
 ]
 `;
@@ -26,6 +38,18 @@ Array [
     color="#CDCDCD"
     delay={0}
     rows={2}
+    widths={
+      Array [
+        97,
+        100,
+        94,
+        90,
+        98,
+        95,
+        98,
+        40,
+      ]
+    }
   />,
 ]
 `;
