@@ -32,7 +32,7 @@ export default class TextBlock extends React.Component {
 
   getRows = () => {
     const { rows, lineSpacing } = this.props;
-    const range = Array.from({ length: rows }); // eslint-disable-line prefer-spread
+    const range = [...Array(rows)];
     return range.map((x, i) => (
       <TextRow
         style={this.getRowStyle(i)}
