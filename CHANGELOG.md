@@ -2,6 +2,13 @@
 
 
 
+## [v2.0.0](https://github.com/buildo/react-placeholder/tree/v2.0.0) (2017-12-20)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.10...v2.0.0)
+
+#### Breaking:
+
+- Array.apply not support ie8 in TextBlock even if I add the polyfill (again) [#65](https://github.com/buildo/react-placeholder/issues/65)
+
 ## [v1.0.10](https://github.com/buildo/react-placeholder/tree/v1.0.10) (2017-12-15)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.9...v1.0.10)
 
