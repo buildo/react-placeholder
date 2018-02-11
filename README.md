@@ -58,7 +58,7 @@ You can also import the built-in placeholders directly. This might be useful to 
 ```jsx
 import {TextBlock, MediaBlock, TextRow, RectShape, RoundShape} from 'react-placeholder/lib/placeholders';
 
-const awesomePlaceholder (
+const awesomePlaceholder = (
   <div className='my-awesome-placeholder'>
     <RectShape color='blue' style={{width: 30, height: 80}}/>
     <TextBlock rows={7} color='yellow'/>
