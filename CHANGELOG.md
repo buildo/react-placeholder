@@ -2,6 +2,17 @@
 
 
 
+## [v3.0.0](https://github.com/buildo/react-placeholder/tree/v3.0.0) (2018-05-04)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v2.0.0...v3.0.0)
+
+#### Breaking:
+
+- Refactor in TypeScript [#69](https://github.com/buildo/react-placeholder/issues/69)
+
+#### New features:
+
+- index.d.ts missing 'style' property [#67](https://github.com/buildo/react-placeholder/issues/67)
+
 ## [v2.0.0](https://github.com/buildo/react-placeholder/tree/v2.0.0) (2017-12-20)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v1.0.10...v2.0.0)
 
