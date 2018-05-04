@@ -3,7 +3,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
   },
   plugins: [
     new ProgressBarPlugin()
@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.[jt]sx?$/,
         include: [
           path.resolve(__dirname, 'src'),
           path.resolve(__dirname, 'styleguide')
@@ -21,6 +21,12 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: [['buildo', { env: 'react' }]]
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: require('path').resolve(__dirname, 'tsconfig.json')
             }
           }
         ]
@@ -40,7 +46,7 @@ module.exports = {
         test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]'
+          name: '[name].[ext]'
         }
       }
     ]

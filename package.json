@@ -5,13 +5,11 @@
   "main": "lib",
   "scripts": {
     "test": "jest",
-    "build": "rm -rf lib && mkdir lib && node-sass src --importer -o lib && babel src -d lib && rsync -a --include '*/' --include '*.d.ts' --exclude '*' src/ lib/",
-    "lint": "scriptoni lint src",
-    "lint-fix": "scriptoni lint src --fix",
-    "preversion": "npm run lint && npm run test",
+    "build": "rm -rf lib && mkdir lib && tsc",
+    "preversion": "npm run test",
     "prepublish": "npm run build",
-    "update-examples": "styleguidist build && git add docs && git commit -m 'update gh-pages' && git push",
     "start": "styleguidist server",
+    "typecheck": "tsc --noEmit",
     "release-version": "smooth-release"
   },
   "repository": {
@@ -32,40 +30,40 @@
     "url": "https://github.com/buildo/react-placeholder/issues"
   },
   "files": [
-    "lib",
-    "index.d.ts"
+    "lib"
   ],
   "homepage": "https://github.com/buildo/react-placeholder",
-  "typings": "lib/index.d.ts",
+  "typings": "lib",
   "dependencies": {
     "prop-types": "^15.6.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-jest": "^21.2.0",
+    "@types/enzyme": "2.8.6",
+    "@types/jest": "^22",
+    "@types/node": "9.6.4",
+    "@types/prop-types": "^15.5.2",
+    "@types/react": "^16.3.10",
     "babel-loader": "^7.1.2",
     "babel-preset-buildo": "^0.1.1",
     "css-loader": "^0.28.5",
-    "enzyme": "^3.0.0",
-    "enzyme-adapter-react-16": "^1.0.2",
-    "eslint-loader": "^1.9.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "file-loader": "^1.1.5",
-    "html-webpack-plugin": "^2.28.0",
-    "jest": "^21.2.1",
-    "jest-cli": "^21.2.1",
-    "node-sass": "4.5.2",
+    "jest": "^22",
+    "node-sass": "^4.8.3",
     "progress-bar-webpack-plugin": "^1.10.0",
     "raf": "^3.4.0",
     "raw-loader": "^0.5.1",
     "react": "^16",
+    "react-docgen-typescript": "^1.1.0",
     "react-dom": "^16",
     "react-styleguidist": "^6.0.33",
-    "react-test-renderer": "^16.0.0",
+    "react-test-renderer": "^16.2.0",
     "sass-loader": "^6.0.6",
-    "scriptoni": "^0.7.6",
-    "smooth-release": "^8.0.0",
-    "url-loader": "^0.5.9",
+    "smooth-release": "^8.0.4",
+    "ts-jest": "^22",
+    "ts-loader": "^2.3.3",
+    "typescript": "^2.8.1",
     "webpack": "3.5.5"
   },
   "peerDependencies": {
@@ -74,7 +72,17 @@
   },
   "jest": {
     "setupFiles": [
-      "raf/polyfill"
+      "raf/polyfill",
+      "<rootDir>/tests/setup.js"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(.*[.](test))[.](tsx?)$",
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "tsx"
     ]
   }
 }

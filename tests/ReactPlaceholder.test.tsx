@@ -1,9 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import ReactPlaceholder from '../src/ReactPlaceholder';
-import Enzyme, { shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 jest.useFakeTimers();
 

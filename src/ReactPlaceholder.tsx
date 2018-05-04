@@ -1,8 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import * as placeholders from './placeholders';
 
-export default class ReactPlaceholder extends React.Component {
+export type CommonProps = {
+  children: React.ReactNode,
+  /** pass `true` when the content is ready and `false` when it's loading */
+  ready: boolean,
+  /** delay in millis to wait when passing from ready to NOT ready */
+  delay?: number,
+  /** if true, the placeholder will never be rendered again once ready becomes true, even if it becomes false again */
+  firstLaunchOnly?: boolean,
+  className?: string,
+  style?: React.CSSProperties
+}
+
+export type Props = (CommonProps & {
+  /** type of placeholder to use */
+  type: 'text' | 'media' | 'textRow' | 'rect' | 'round',
+  /** number of rows displayed in 'media' and 'text' placeholders */
+  rows?: number,
+  /** color of the placeholder */
+  color?: string,
+  /** pass true to show a nice loading animation on the placeholder */
+  showLoadingAnimation?: boolean,
+  customPlaceholder?: undefined
+}) | (CommonProps & {
+  /** pass any renderable content to be used as placeholder instead of the built-in ones */
+  customPlaceholder?: React.ReactNode | React.ReactElement<{ [k: string]: any }>,
+  type?: undefined,
+  rows?: undefined,
+  color?: undefined,
+  showLoadingAnimation?: undefined
+})
+
+export default class ReactPlaceholder extends React.Component<Props> {
 
   static propTypes = {
     children: PropTypes.oneOfType([
@@ -19,7 +50,9 @@ export default class ReactPlaceholder extends React.Component {
     customPlaceholder: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.element
-    ])
+    ]),
+    className: PropTypes.string,
+    style: PropTypes.object
   }
 
   static defaultProps = {
@@ -31,6 +64,8 @@ export default class ReactPlaceholder extends React.Component {
   state = {
     ready: this.props.ready
   }
+
+  timeout?: number;
 
   getFiller = () => {
     const {
@@ -52,7 +87,7 @@ export default class ReactPlaceholder extends React.Component {
       return customPlaceholder;
     }
 
-    const Placeholder = placeholders[type];
+    const Placeholder = placeholders[type!];
 
     return <Placeholder {...rest} className={classes} />;
   };
@@ -60,8 +95,8 @@ export default class ReactPlaceholder extends React.Component {
   setNotReady = () => {
     const { delay } = this.props;
 
-    if (delay > 0) {
-      this.timeout = setTimeout(() => {
+    if (delay && delay > 0) {
+      this.timeout = window.setTimeout(() => {
         this.setState({ ready: false });
       }, delay);
     } else {
@@ -71,7 +106,7 @@ export default class ReactPlaceholder extends React.Component {
 
   setReady = () => {
     if (this.timeout) {
-      clearTimeout(this.timeout);
+      window.clearTimeout(this.timeout);
     }
 
     if (!this.state.ready) {
@@ -83,7 +118,7 @@ export default class ReactPlaceholder extends React.Component {
     return this.state.ready ? this.props.children : this.getFiller();
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Props) {
     if (!this.props.firstLaunchOnly && this.state.ready && !nextProps.ready) {
       this.setNotReady();
     } else if (nextProps.ready) {

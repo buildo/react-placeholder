@@ -41,7 +41,9 @@
 You can use your own custom placeholder:
 
 ```js
-<ReactPlaceholder customPlaceholder={<CustomPlaceholder />} ready={false} />
+<ReactPlaceholder customPlaceholder={<CustomPlaceholder />} ready={false}>
+  <RealComponent />
+</ReactPlaceholder>
 ```
 
 ### Animation
