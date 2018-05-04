@@ -1,8 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import TextRow from './TextRow';
 
-export default class TextBlock extends React.Component {
+export type DefaultedProps = Props & {
+  widths: NonNullable<Props['widths']>
+}
+
+export type Props = {
+  rows: number,
+  color: string,
+  lineSpacing?: string | number,
+  widths?: number[],
+  style?: React.CSSProperties,
+  className?: string
+}
+
+export default class TextBlock extends React.Component<Props> {
 
   static propTypes = {
     rows: PropTypes.number.isRequired,
@@ -16,25 +29,25 @@ export default class TextBlock extends React.Component {
     className: PropTypes.string
   }
 
-  static defaultProps = {
+  static defaultProps: Partial<Props> = {
     widths: [97, 100, 94, 90, 98, 95, 98, 40]
   }
 
-  getRowStyle = (i) => {
-    const { rows, color, widths } = this.props;
+  getRowStyle = (i: number) => {
+    const { rows, widths } = this.props as DefaultedProps;
 
     return {
-      backgroundColor: color,
       maxHeight: `${(100 / (rows * 2 - 1))}%`,
       width: `${widths[(i + widths.length) % widths.length]}%`
     };
   }
 
   getRows = () => {
-    const { rows, lineSpacing } = this.props;
-    const range = [...Array(rows)];
-    return range.map((x, i) => (
+    const { rows, lineSpacing, color } = this.props;
+    const range: undefined[] = Array.apply(null, Array(rows));
+    return range.map((_, i) => (
       <TextRow
+        color={color}
         style={this.getRowStyle(i)}
         lineSpacing={i !== 0 ? lineSpacing : 0}
         key={i}

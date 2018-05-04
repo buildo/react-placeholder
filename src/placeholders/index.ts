@@ -3,13 +3,14 @@ import RoundShape from './RoundShape';
 import RectShape from './RectShape';
 import TextBlock from './TextBlock';
 import MediaBlock from './MediaBlock';
-// import Card from 'Card';
 
-export TextRow from './TextRow';
-export RoundShape from './RoundShape';
-export RectShape from './RectShape';
-export TextBlock from './TextBlock';
-export MediaBlock from './MediaBlock';
+export {
+  TextRow,
+  RoundShape,
+  RectShape,
+  TextBlock,
+  MediaBlock
+}
 
 export const textRow = TextRow;
 export const round = RoundShape;

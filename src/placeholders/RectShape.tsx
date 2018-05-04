@@ -1,7 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 
-export default class RectShape extends React.Component {
+export type Props = {
+  color?: string,
+  className?: string,
+  style?: React.CSSProperties
+}
+
+export default class RectShape extends React.Component<Props> {
 
   static propTypes = {
     color: PropTypes.string,

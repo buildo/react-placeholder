@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES3",
+    "module": "commonjs",
+    "declaration": true,
+    "allowSyntheticDefaultImports": false,
+    "allowJs": false,
+    "experimentalDecorators": true,
+    "outDir": "./lib",
+    "baseUrl": ".",
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "sourceMap": false,
+    "alwaysStrict": true,
+    "jsx": "react",
+    "lib": [
+      "dom", "es6"
+    ]
+  },
+  "include": [
+    "src/*",
+    "typings"
+  ]
+}

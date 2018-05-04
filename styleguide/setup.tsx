@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   TextRow,
   RoundShape,
@@ -10,20 +10,20 @@ import {
 import '../src/reactPlaceholder.scss';
 import '../examples/examples.scss';
 
-global.CustomPlaceholder = () => (
+(global as any).CustomPlaceholder = () => (
   <div style={{ color: 'blue', backgroundColor: 'yellow' }}>
     I'm a custom placeholder!
   </div>
 );
 
-global.RealComponent = () => (
+(global as any).RealComponent = () => (
   <div style={{ padding: 10, backgroundColor: '#F0F0F0', color: 'red' }}>
     I'm the real component!
   </div>
 );
 
-global.TextRow = TextRow;
-global.RoundShape = RoundShape;
-global.RectShape = RectShape;
-global.TextBlock = TextBlock;
-global.MediaBlock = MediaBlock;
+(global as any).TextRow = TextRow;
+(global as any).RoundShape = RoundShape;
+(global as any).RectShape = RectShape;
+(global as any).TextBlock = TextBlock;
+(global as any).MediaBlock = MediaBlock;

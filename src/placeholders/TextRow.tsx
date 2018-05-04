@@ -1,11 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 
-export default class TextRow extends React.Component {
+export type Props = {
+  maxHeight?: string | number,
+  invisible?: boolean,
+  className?: string,
+  color: string,
+  style?: React.CSSProperties,
+  lineSpacing?: string | number
+}
+
+export default class TextRow extends React.Component<Props> {
 
   static propTypes = {
+    maxHeight: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
     className: PropTypes.string,
-    color: PropTypes.string,
+    color: PropTypes.string.isRequired,
     lineSpacing: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number

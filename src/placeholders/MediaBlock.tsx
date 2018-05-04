@@ -1,10 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import TextBlock from './TextBlock';
 import RoundShape from './RoundShape';
 
+export type Props = {
+  rows: number,
+  color: string,
+  style?: React.CSSProperties,
+  className?: string
+}
 
-export default class MediaBlock extends React.Component {
+export default class MediaBlock extends React.Component<Props> {
 
   static propTypes = {
     rows: PropTypes.number.isRequired,
