@@ -2,6 +2,13 @@
 
 
 
+## [v3.0.1](https://github.com/buildo/react-placeholder/tree/v3.0.1) (2018-05-08)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v3.0.0...v3.0.1)
+
+#### Fixes (bugs & defects):
+
+- Removed CSS? [#72](https://github.com/buildo/react-placeholder/issues/72)
+
 ## [v3.0.0](https://github.com/buildo/react-placeholder/tree/v3.0.0) (2018-05-04)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v2.0.0...v3.0.0)
 
