@@ -1,4 +1,8 @@
 import * as React from 'react';
+import { execSync } from 'child_process';
+import * as fs from 'fs';
+import * as path from 'path';
+import flatten = require('lodash/flatten');
 import ReactPlaceholder from '../src/ReactPlaceholder';
 import { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -52,3 +56,25 @@ describe('ReactPlaceholder', () => {
   });
 
 });
+
+describe('build', () => {
+
+  it('build script generates every needed file', () => {
+    execSync('npm run build', { stdio:[] })
+
+    const libPath = path.resolve(__dirname, '../lib');
+
+    const libFiles = fs.readdirSync(libPath);
+
+    const files = flatten(libFiles.map(fileInRoot => {
+      const filePath = path.resolve(libPath, fileInRoot);
+      if (fs.lstatSync(filePath).isDirectory()) {
+        return fs.readdirSync(filePath).map(fileInFolder => `${fileInRoot}/${fileInFolder}`);
+      }
+      return fileInRoot;
+    }));
+
+    expect(files).toMatchSnapshot();
+  })
+
+})

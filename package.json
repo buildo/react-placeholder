@@ -5,7 +5,7 @@
   "main": "lib",
   "scripts": {
     "test": "jest",
-    "build": "rm -rf lib && mkdir lib && tsc",
+    "build": "rm -rf lib && mkdir lib && node-sass src -o lib && tsc",
     "preversion": "npm run test",
     "prepublish": "npm run build",
     "start": "styleguidist server",
