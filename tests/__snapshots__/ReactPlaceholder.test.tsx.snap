@@ -53,3 +53,25 @@ Array [
   />,
 ]
 `;
+
+exports[`build build script generates every needed file 1`] = `
+Array [
+  "ReactPlaceholder.d.ts",
+  "ReactPlaceholder.js",
+  "index.d.ts",
+  "index.js",
+  "placeholders/MediaBlock.d.ts",
+  "placeholders/MediaBlock.js",
+  "placeholders/RectShape.d.ts",
+  "placeholders/RectShape.js",
+  "placeholders/RoundShape.d.ts",
+  "placeholders/RoundShape.js",
+  "placeholders/TextBlock.d.ts",
+  "placeholders/TextBlock.js",
+  "placeholders/TextRow.d.ts",
+  "placeholders/TextRow.js",
+  "placeholders/index.d.ts",
+  "placeholders/index.js",
+  "reactPlaceholder.css",
+]
+`;
