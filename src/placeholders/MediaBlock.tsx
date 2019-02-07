@@ -22,10 +22,14 @@ export default class MediaBlock extends React.Component<Props> {
   render() {
     const { className, style, color, rows } = this.props;
 
+    const defaultStyles = {
+      display: 'flex'
+    };
+
     const classes = ['media-block', className].filter(c => c).join(' ');
 
     return (
-      <div className={classes} style={{ ...style, display: 'flex' }}>
+      <div className={classes} style={{ ...defaultStyles, ...style }}>
         <RoundShape
           color={color}
           style={{ minHeight: 55, width: 55, minWidth: 55, marginRight: 10 }}
