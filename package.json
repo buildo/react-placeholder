@@ -71,6 +71,7 @@
     "react-dom": "^0.14 || ^15 || ^16"
   },
   "jest": {
+    "testURL": "http://localhost",
     "setupFiles": [
       "raf/polyfill",
       "<rootDir>/tests/setup.js"
