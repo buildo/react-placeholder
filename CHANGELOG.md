@@ -2,6 +2,14 @@
 
 
 
+## [v3.0.2](https://github.com/buildo/react-placeholder/tree/v3.0.2) (2019-02-21)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v3.0.1...v3.0.2)
+
+#### New features:
+
+- ReactPlaceholder text component doesn't override the width property [#78](https://github.com/buildo/react-placeholder/issues/78)
+- [Typings] Can't assign Element to customPlaceholder [#75](https://github.com/buildo/react-placeholder/issues/75)
+
 ## [v3.0.1](https://github.com/buildo/react-placeholder/tree/v3.0.1) (2018-05-08)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v3.0.0...v3.0.1)
 
