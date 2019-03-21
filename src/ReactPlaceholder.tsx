@@ -97,7 +97,9 @@ export default class ReactPlaceholder extends React.Component<Props> {
 
     if (delay && delay > 0) {
       this.timeout = window.setTimeout(() => {
-        this.setState({ ready: false });
+        if (!this.props.ready) {
+          this.setState({ ready: false });
+        }
       }, delay);
     } else {
       this.setState({ ready: false });
