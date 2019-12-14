@@ -1,10 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ReactPlaceholder renders a custom placeholder when the content is not ready 1`] = `
+Array [
+  <div
+    className=""
+  >
+    Custom Placeholder
+  </div>,
+]
+`;
+
 exports[`ReactPlaceholder renders the content when it's ready 1`] = `
 Array [
   <div>
     Some ready content
   </div>,
+]
+`;
+
+exports[`ReactPlaceholder renders the media placeholder when the content is not ready 1`] = `
+Array [
+  <MediaBlock
+    color="#CDCDCD"
+    delay={0}
+    rows={2}
+  />,
 ]
 `;
 
@@ -30,7 +50,25 @@ Array [
 ]
 `;
 
-exports[`ReactPlaceholder renders the placeholder when the content is not ready 1`] = `
+exports[`ReactPlaceholder renders the rect placeholder when the content is not ready 1`] = `
+Array [
+  <RectShape
+    color="#CDCDCD"
+    delay={0}
+  />,
+]
+`;
+
+exports[`ReactPlaceholder renders the round placeholder when the content is not ready 1`] = `
+Array [
+  <RoundShape
+    color="#CDCDCD"
+    delay={0}
+  />,
+]
+`;
+
+exports[`ReactPlaceholder renders the text placeholder when the content is not ready 1`] = `
 Array [
   <TextBlock
     color="#CDCDCD"
@@ -48,6 +86,16 @@ Array [
         40,
       ]
     }
+  />,
+]
+`;
+
+exports[`ReactPlaceholder renders the textRow placeholder when the content is not ready 1`] = `
+Array [
+  <TextRow
+    color="#CDCDCD"
+    delay={0}
+    lineSpacing="0.7em"
   />,
 ]
 `;
