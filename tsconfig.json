@@ -8,13 +8,11 @@
     "experimentalDecorators": true,
     "outDir": "./lib",
     "baseUrl": ".",
-    "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strictNullChecks": true,
     "sourceMap": false,
-    "alwaysStrict": true,
+    "strict": true,
     "jsx": "react",
     "lib": [
       "dom", "es6"

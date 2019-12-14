@@ -2,10 +2,9 @@ import * as React from 'react';
 import { execSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
-import flatten = require('lodash/flatten');
+import { flatten } from 'lodash';
 import ReactPlaceholder from '../src/ReactPlaceholder';
 import { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 
 jest.useFakeTimers();
 

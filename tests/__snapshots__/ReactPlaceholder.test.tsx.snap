@@ -11,7 +11,6 @@ Array [
 exports[`ReactPlaceholder renders the placeholder only after the specified delay 1`] = `
 Array [
   <TextBlock
-    className={undefined}
     color="#CDCDCD"
     delay={10000}
     rows={2}
@@ -34,7 +33,6 @@ Array [
 exports[`ReactPlaceholder renders the placeholder when the content is not ready 1`] = `
 Array [
   <TextBlock
-    className={undefined}
     color="#CDCDCD"
     delay={0}
     rows={2}

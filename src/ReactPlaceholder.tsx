@@ -89,6 +89,7 @@ export default class ReactPlaceholder extends React.Component<Props> {
 
     const Placeholder = placeholders[type!];
 
+    // @ts-ignore
     return <Placeholder {...rest} className={classes} />;
   };
 

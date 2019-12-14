@@ -44,7 +44,7 @@ export default class TextBlock extends React.Component<Props> {
 
   getRows = () => {
     const { rows, lineSpacing, color } = this.props;
-    const range: undefined[] = Array.apply(null, Array(rows));
+    const range = Array.apply(null, Array(rows));
     return range.map((_, i) => (
       <TextRow
         color={color}
