@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import * as placeholders from './placeholders';
 
 export type CommonProps = {
@@ -34,26 +33,6 @@ export type Props = (CommonProps & {
 })
 
 export default class ReactPlaceholder extends React.Component<Props> {
-
-  static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.element
-    ]).isRequired,
-    delay: PropTypes.number,
-    ready: PropTypes.bool.isRequired,
-    firstLaunchOnly: PropTypes.bool,
-    type: PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
-    rows: PropTypes.number,
-    color: PropTypes.string,
-    showLoadingAnimation: PropTypes.bool,
-    customPlaceholder: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.element
-    ]),
-    className: PropTypes.string,
-    style: PropTypes.object
-  }
 
   static defaultProps = {
     delay: 0,

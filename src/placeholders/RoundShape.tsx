@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 
 export type Props = {
   color: string,
@@ -8,12 +7,6 @@ export type Props = {
 }
 
 export default class RoundShape extends React.Component<Props> {
-
-  static propTypes = {
-    color: PropTypes.string.isRequired,
-    className: PropTypes.string,
-    style: PropTypes.object
-  }
 
   render() {
     const { className, style, color } = this.props;

@@ -34,15 +34,12 @@
   ],
   "homepage": "https://github.com/buildo/react-placeholder",
   "typings": "lib",
-  "dependencies": {
-    "prop-types": "^15.7.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/enzyme": "^3.10.4",
     "@types/jest": "^24.0.23",
     "@types/lodash": "^4.14.149",
     "@types/node": "12.12.17",
-    "@types/prop-types": "^15.7.3",
     "@types/react": "^16.9.16",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

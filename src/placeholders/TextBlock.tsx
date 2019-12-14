@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import TextRow from './TextRow';
 
 export type DefaultedProps = Props & {
@@ -16,18 +15,6 @@ export type Props = {
 }
 
 export default class TextBlock extends React.Component<Props> {
-
-  static propTypes = {
-    rows: PropTypes.number.isRequired,
-    color: PropTypes.string.isRequired,
-    lineSpacing: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    widths: PropTypes.arrayOf(PropTypes.number),
-    style: PropTypes.object,
-    className: PropTypes.string
-  }
 
   static defaultProps: Partial<Props> = {
     widths: [97, 100, 94, 90, 98, 95, 98, 40]
