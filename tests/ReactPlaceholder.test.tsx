@@ -64,6 +64,17 @@ describe('ReactPlaceholder', () => {
     expect(tree.getElements()).toMatchSnapshot();
   });
 
+  it('renders the round placeholder with animation when the content is not ready', () => {
+    const content = <div>Some content still loading...</div>;
+    const tree = shallow(
+      <ReactPlaceholder type="round" ready={false} showLoadingAnimation>
+        {content}
+      </ReactPlaceholder>
+    );
+    expect(tree.contains(content)).toBe(false);
+    expect(tree.getElements()).toMatchSnapshot();
+  });
+
   it('renders a custom placeholder when the content is not ready', () => {
     const content = <div>Some ready content</div>;
     const customPlaceholder = <div>Custom Placeholder</div>;
@@ -73,6 +84,22 @@ describe('ReactPlaceholder', () => {
       </ReactPlaceholder>
     );
     expect(tree.contains(content)).toBe(false);
+    // an empty className is injected to the customer placeholder element,
+    // so we'll check the children for now
+    expect(tree.text()).toBe(customPlaceholder.props.children);
+    expect(tree.getElements()).toMatchSnapshot();
+  });
+
+  it('renders a string custom placeholder when the content is not ready', () => {
+    const content = <div>Some ready content</div>;
+    const customPlaceholder = 'Custom Placeholder';
+    const tree = shallow(
+      <ReactPlaceholder ready={false} customPlaceholder={customPlaceholder}>
+        {content}
+      </ReactPlaceholder>
+    );
+    expect(tree.contains(content)).toBe(false);
+    expect(tree.text()).toBe(customPlaceholder);
     expect(tree.getElements()).toMatchSnapshot();
   });
 
@@ -100,6 +127,27 @@ describe('ReactPlaceholder', () => {
         {content}
       </ReactPlaceholder>
     );
+    expect(tree.contains(content)).toBe(true);
+    expect(tree.getElements()).toMatchSnapshot();
+  });
+
+  it("renders content when it's ready, then a placeholder when it's not ready, and finally content again when it's ready", () => {
+    const content = <div>Some ready content</div>;
+    const tree = shallow(
+      <ReactPlaceholder type="text" rows={2} ready>
+        {content}
+      </ReactPlaceholder>
+    );
+    expect(tree.contains(content)).toBe(true);
+    expect(tree.getElements()).toMatchSnapshot();
+
+    tree.setProps({ ready: false });
+
+    expect(tree.contains(content)).toBe(false);
+    expect(tree.getElements()).toMatchSnapshot();
+
+    tree.setProps({ ready: true });
+
     expect(tree.contains(content)).toBe(true);
     expect(tree.getElements()).toMatchSnapshot();
   });

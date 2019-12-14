@@ -10,6 +10,50 @@ Array [
 ]
 `;
 
+exports[`ReactPlaceholder renders a string custom placeholder when the content is not ready 1`] = `
+Array [
+  null,
+]
+`;
+
+exports[`ReactPlaceholder renders content when it's ready, then a placeholder when it's not ready, and finally content again when it's ready 1`] = `
+Array [
+  <div>
+    Some ready content
+  </div>,
+]
+`;
+
+exports[`ReactPlaceholder renders content when it's ready, then a placeholder when it's not ready, and finally content again when it's ready 2`] = `
+Array [
+  <TextBlock
+    color="#CDCDCD"
+    delay={0}
+    rows={2}
+    widths={
+      Array [
+        97,
+        100,
+        94,
+        90,
+        98,
+        95,
+        98,
+        40,
+      ]
+    }
+  />,
+]
+`;
+
+exports[`ReactPlaceholder renders content when it's ready, then a placeholder when it's not ready, and finally content again when it's ready 3`] = `
+Array [
+  <div>
+    Some ready content
+  </div>,
+]
+`;
+
 exports[`ReactPlaceholder renders the content when it's ready 1`] = `
 Array [
   <div>
@@ -62,6 +106,16 @@ Array [
 exports[`ReactPlaceholder renders the round placeholder when the content is not ready 1`] = `
 Array [
   <RoundShape
+    color="#CDCDCD"
+    delay={0}
+  />,
+]
+`;
+
+exports[`ReactPlaceholder renders the round placeholder with animation when the content is not ready 1`] = `
+Array [
+  <RoundShape
+    className="show-loading-animation"
     color="#CDCDCD"
     delay={0}
   />,
