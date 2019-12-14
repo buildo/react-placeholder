@@ -2,7 +2,6 @@ import * as React from 'react';
 
 export type Props = {
   maxHeight?: string | number,
-  invisible?: boolean,
   className?: string,
   color: string,
   style?: React.CSSProperties,
