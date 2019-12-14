@@ -1,28 +1,26 @@
 import * as React from 'react';
+import { joinClassNames } from '../utils';
 
 export type Props = {
-  color: string,
-  style?: React.CSSProperties,
-  className?: string
-}
+  color: string;
+  style?: React.CSSProperties;
+  className?: string;
+};
 
-export default class RoundShape extends React.Component<Props> {
+const RoundShape: React.FC<Props> = ({ className, style, color }) => {
+  const defaultStyles = {
+    backgroundColor: color,
+    borderRadius: '500rem',
+    width: '100%',
+    height: '100%'
+  };
 
-  render() {
-    const { className, style, color } = this.props;
+  return (
+    <div
+      className={joinClassNames('round-shape', className)}
+      style={{ ...defaultStyles, ...style }}
+    />
+  );
+};
 
-    const defaultStyles = {
-      backgroundColor: color,
-      borderRadius: '500rem',
-      width: '100%',
-      height: '100%'
-    };
-
-    const classes = ['round-shape', className].filter(c => c).join(' ');
-
-    return (
-      <div className={classes} style={{ ...defaultStyles, ...style }} />
-    );
-  }
-
-}
+export default RoundShape;

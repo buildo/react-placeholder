@@ -24,18 +24,6 @@ Array [
     <TextBlock
       color="rebeccapurple"
       rows={2}
-      widths={
-        Array [
-          97,
-          100,
-          94,
-          90,
-          98,
-          95,
-          98,
-          40,
-        ]
-      }
     />
   </div>,
 ]
@@ -66,18 +54,6 @@ Array [
     <TextBlock
       color="rebeccapurple"
       rows={2}
-      widths={
-        Array [
-          97,
-          100,
-          94,
-          90,
-          98,
-          95,
-          98,
-          40,
-        ]
-      }
     />
   </div>,
 ]
@@ -169,7 +145,6 @@ Array [
     />
     <TextRow
       color="rebeccapurple"
-      lineSpacing="0.7em"
       style={
         Object {
           "maxHeight": "33.333333333333336%",
@@ -238,7 +213,6 @@ Array [
     />
     <TextRow
       color="rebeccapurple"
-      lineSpacing="0.7em"
       style={
         Object {
           "maxHeight": "33.333333333333336%",

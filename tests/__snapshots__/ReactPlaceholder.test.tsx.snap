@@ -30,18 +30,6 @@ Array [
     color="#CDCDCD"
     delay={0}
     rows={2}
-    widths={
-      Array [
-        97,
-        100,
-        94,
-        90,
-        98,
-        95,
-        98,
-        40,
-      ]
-    }
   />,
 ]
 `;
@@ -78,18 +66,6 @@ Array [
     color="#CDCDCD"
     delay={10000}
     rows={2}
-    widths={
-      Array [
-        97,
-        100,
-        94,
-        90,
-        98,
-        95,
-        98,
-        40,
-      ]
-    }
   />,
 ]
 `;
@@ -128,18 +104,6 @@ Array [
     color="#CDCDCD"
     delay={0}
     rows={2}
-    widths={
-      Array [
-        97,
-        100,
-        94,
-        90,
-        98,
-        95,
-        98,
-        40,
-      ]
-    }
   />,
 ]
 `;
@@ -149,7 +113,6 @@ Array [
   <TextRow
     color="#CDCDCD"
     delay={0}
-    lineSpacing="0.7em"
   />,
 ]
 `;
@@ -173,5 +136,7 @@ Array [
   "placeholders/index.d.ts",
   "placeholders/index.js",
   "reactPlaceholder.css",
+  "utils.d.ts",
+  "utils.js",
 ]
 `;
