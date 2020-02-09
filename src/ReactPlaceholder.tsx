@@ -1,108 +1,144 @@
 import * as React from 'react';
 import * as placeholders from './placeholders';
+import { joinClassNames } from './utils';
 
 export type CommonProps = {
-  children: React.ReactNode,
+  children: React.ReactNode;
   /** pass `true` when the content is ready and `false` when it's loading */
-  ready: boolean,
+  ready: boolean;
   /** delay in millis to wait when passing from ready to NOT ready */
-  delay?: number,
+  delay?: number;
   /** if true, the placeholder will never be rendered again once ready becomes true, even if it becomes false again */
-  firstLaunchOnly?: boolean,
-  className?: string,
-  style?: React.CSSProperties
-}
+  firstLaunchOnly?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-export type Props = (CommonProps & {
-  /** type of placeholder to use */
-  type: 'text' | 'media' | 'textRow' | 'rect' | 'round',
-  /** number of rows displayed in 'media' and 'text' placeholders */
-  rows?: number,
-  /** color of the placeholder */
-  color?: string,
-  /** pass true to show a nice loading animation on the placeholder */
-  showLoadingAnimation?: boolean,
-  customPlaceholder?: undefined
-}) | (CommonProps & {
+export type PlaceholderProps = CommonProps & {
+  // we have a default color, so we can set this as optional
+  color?: string;
+  showLoadingAnimation?: boolean;
+  customPlaceholder?: undefined;
+};
+
+export type CustomPlaceholderProps = CommonProps & {
   /** pass any renderable content to be used as placeholder instead of the built-in ones */
-  customPlaceholder?: React.ReactNode | React.ReactElement<{ [k: string]: any }>,
-  type?: undefined,
-  rows?: undefined,
-  color?: undefined,
-  showLoadingAnimation?: undefined
-})
+  customPlaceholder?:
+    | React.ReactNode
+    | React.ReactElement<{ [k: string]: any }>;
+  type?: undefined;
+  rows?: undefined;
+  color?: undefined;
+  showLoadingAnimation?: undefined;
+};
 
-export default class ReactPlaceholder extends React.Component<Props> {
+type MediaPlaceholderProps = PlaceholderProps &
+  Omit<
+    React.ComponentProps<typeof placeholders.media>,
+    'color' | 'children'
+  > & {
+    type: 'media';
+  };
 
-  static defaultProps = {
-    delay: 0,
-    type: 'text',
-    color: '#CDCDCD'
-  }
+type RectPlaceholderProps = PlaceholderProps &
+  Omit<React.ComponentProps<typeof placeholders.rect>, 'children'> & {
+    type: 'rect';
+  };
 
-  state = {
-    ready: this.props.ready
-  }
+type RoundPlaceholderProps = PlaceholderProps &
+  Omit<
+    React.ComponentProps<typeof placeholders.round>,
+    'color' | 'children'
+  > & {
+    type: 'round';
+  };
 
-  timeout?: number;
+type TextPlaceholderProps = PlaceholderProps &
+  Omit<React.ComponentProps<typeof placeholders.text>, 'color' | 'children'> & {
+    type: 'text';
+  };
 
-  getFiller = () => {
-    const {
-      firstLaunchOnly, children, ready, className, // eslint-disable-line no-unused-vars
-      type, customPlaceholder, showLoadingAnimation, ...rest
-    } = this.props;
+type TextRowPlaceholderProps = PlaceholderProps &
+  Omit<
+    React.ComponentProps<typeof placeholders.textRow>,
+    'color' | 'children'
+  > & {
+    type: 'textRow';
+  };
 
-    const classes = showLoadingAnimation ?
-      ['show-loading-animation', className].filter(c => c).join(' ') :
-      className;
+export type Props =
+  | MediaPlaceholderProps
+  | RectPlaceholderProps
+  | RoundPlaceholderProps
+  | TextRowPlaceholderProps
+  | TextPlaceholderProps
+  | CustomPlaceholderProps;
+
+const ReactPlaceholder: React.FC<Props> = ({
+  delay = 0,
+  type = 'text',
+  color = '#CDCDCD',
+  ready: readyProp,
+  firstLaunchOnly,
+  children,
+  className,
+  showLoadingAnimation,
+  customPlaceholder,
+  ...rest
+}) => {
+  const [ready, setReady] = React.useState(readyProp);
+  const timeout = React.useRef<null | number>(null);
+
+  const getFiller = (): React.ReactNode => {
+    const classes = showLoadingAnimation
+      ? joinClassNames('show-loading-animation', className)
+      : className;
 
     if (customPlaceholder && React.isValidElement(customPlaceholder)) {
-      const mergedCustomClasses = [
-        customPlaceholder.props.className,
-        classes
-      ].filter(c => c).join(' ');
-      return React.cloneElement(customPlaceholder, { className: mergedCustomClasses });
+      const mergedCustomClasses = [customPlaceholder.props.className, classes]
+        .filter(c => c)
+        .join(' ');
+      return React.cloneElement(customPlaceholder, {
+        className: mergedCustomClasses
+      });
     } else if (customPlaceholder) {
       return customPlaceholder;
     }
 
-    const Placeholder = placeholders[type!];
+    const Placeholder = placeholders[type];
 
-    // @ts-ignore
-    return <Placeholder {...rest} className={classes} />;
+    // unsure how to properly get the compiler to conditionally recognize rows
+    return (
+      <Placeholder
+        {...rest}
+        color={color}
+        rows={(rest as { rows: number }).rows}
+        className={classes}
+      />
+    );
   };
 
-  setNotReady = () => {
-    const { delay } = this.props;
+  React.useEffect(() => {
+    if (!firstLaunchOnly && ready && !readyProp) {
+      if (delay && delay > 0) {
+        timeout.current = window.setTimeout(() => {
+          setReady(false);
+        }, delay);
+      } else {
+        setReady(false);
+      }
+    } else if (readyProp) {
+      if (timeout.current) {
+        window.clearTimeout(timeout.current);
+      }
 
-    if (delay && delay > 0) {
-      this.timeout = window.setTimeout(() => {
-        this.setState({ ready: false });
-      }, delay);
-    } else {
-      this.setState({ ready: false });
+      if (!ready) {
+        setReady(true);
+      }
     }
-  }
+  }, [firstLaunchOnly, ready, readyProp, delay]);
 
-  setReady = () => {
-    if (this.timeout) {
-      window.clearTimeout(this.timeout);
-    }
+  return ready ? children : getFiller();
+};
 
-    if (!this.state.ready) {
-      this.setState({ ready: true });
-    }
-  }
-
-  render() {
-    return this.state.ready ? this.props.children : this.getFiller();
-  }
-
-  componentWillReceiveProps(nextProps: Props) {
-    if (!this.props.firstLaunchOnly && this.state.ready && !nextProps.ready) {
-      this.setNotReady();
-    } else if (nextProps.ready) {
-      this.setReady();
-    }
-  }
-}
+export default ReactPlaceholder;
