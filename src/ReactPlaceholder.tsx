@@ -17,6 +17,8 @@ export type CommonProps = {
 export type PlaceholderProps = CommonProps & {
   // we have a default color, so we can set this as optional
   color?: string;
+  // we have a default color, so we can set this as optional
+  rows?: number;
   showLoadingAnimation?: boolean;
   customPlaceholder?: undefined;
 };
@@ -33,7 +35,7 @@ export type CustomPlaceholderProps = CommonProps & {
 type MediaPlaceholderProps = PlaceholderProps &
   Omit<
     React.ComponentProps<typeof placeholders.media>,
-    'color' | 'children'
+    'color' | 'rows' | 'children'
   > & {
     type: 'media';
   };
@@ -52,7 +54,10 @@ type RoundPlaceholderProps = PlaceholderProps &
   };
 
 type TextPlaceholderProps = PlaceholderProps &
-  Omit<React.ComponentProps<typeof placeholders.text>, 'color' | 'children'> & {
+  Omit<
+    React.ComponentProps<typeof placeholders.text>,
+    'color' | 'rows' | 'children'
+  > & {
     type: 'text';
   };
 
@@ -76,6 +81,7 @@ const ReactPlaceholder: React.FC<Props> = ({
   delay = 0,
   type = 'text',
   color = '#CDCDCD',
+  rows = 3,
   ready: readyProp,
   firstLaunchOnly,
   children,
@@ -105,14 +111,8 @@ const ReactPlaceholder: React.FC<Props> = ({
 
     const Placeholder = placeholders[type];
 
-    // unsure how to properly get the compiler to conditionally recognize rows
     return (
-      <Placeholder
-        {...rest}
-        color={color}
-        rows={(rest as { rows: number }).rows}
-        className={classes}
-      />
+      <Placeholder {...rest} color={color} rows={rows} className={classes} />
     );
   };
 

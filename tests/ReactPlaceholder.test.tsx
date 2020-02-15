@@ -90,19 +90,6 @@ describe('ReactPlaceholder', () => {
     expect(tree.getElements()).toMatchSnapshot();
   });
 
-  it('renders a string custom placeholder when the content is not ready', () => {
-    const content = <div>Some ready content</div>;
-    const customPlaceholder = 'Custom Placeholder';
-    const tree = shallow(
-      <ReactPlaceholder ready={false} customPlaceholder={customPlaceholder}>
-        {content}
-      </ReactPlaceholder>
-    );
-    expect(tree.contains(content)).toBe(false);
-    expect(tree.text()).toBe(customPlaceholder);
-    expect(tree.getElements()).toMatchSnapshot();
-  });
-
   it('renders the placeholder only after the specified delay', () => {
     const content = <div>Some content still loading...</div>;
     const tree = shallow(

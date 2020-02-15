@@ -10,12 +10,6 @@ Array [
 ]
 `;
 
-exports[`ReactPlaceholder renders a string custom placeholder when the content is not ready 1`] = `
-Array [
-  null,
-]
-`;
-
 exports[`ReactPlaceholder renders content when it's ready, then a placeholder when it's not ready, and finally content again when it's ready 1`] = `
 Array [
   <div>
@@ -54,7 +48,6 @@ exports[`ReactPlaceholder renders the media placeholder when the content is not 
 Array [
   <MediaBlock
     color="#CDCDCD"
-    delay={0}
     rows={2}
   />,
 ]
@@ -74,7 +67,7 @@ exports[`ReactPlaceholder renders the rect placeholder when the content is not r
 Array [
   <RectShape
     color="#CDCDCD"
-    delay={0}
+    rows={3}
   />,
 ]
 `;
@@ -83,7 +76,7 @@ exports[`ReactPlaceholder renders the round placeholder when the content is not 
 Array [
   <RoundShape
     color="#CDCDCD"
-    delay={0}
+    rows={3}
   />,
 ]
 `;
@@ -93,7 +86,7 @@ Array [
   <RoundShape
     className="show-loading-animation"
     color="#CDCDCD"
-    delay={0}
+    rows={3}
   />,
 ]
 `;
@@ -102,7 +95,6 @@ exports[`ReactPlaceholder renders the text placeholder when the content is not r
 Array [
   <TextBlock
     color="#CDCDCD"
-    delay={0}
     rows={2}
   />,
 ]
@@ -112,7 +104,7 @@ exports[`ReactPlaceholder renders the textRow placeholder when the content is no
 Array [
   <TextRow
     color="#CDCDCD"
-    delay={0}
+    rows={3}
   />,
 ]
 `;
