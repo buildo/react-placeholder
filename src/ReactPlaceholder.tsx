@@ -3,7 +3,7 @@ import * as placeholders from './placeholders';
 import { joinClassNames } from './utils';
 
 export type CommonProps = {
-  children: React.ReactNode;
+  children: React.ReactElement | null;
   /** pass `true` when the content is ready and `false` when it's loading */
   ready: boolean;
   /** delay in millis to wait when passing from ready to NOT ready */
@@ -23,9 +23,7 @@ export type PlaceholderProps = CommonProps & {
 
 export type CustomPlaceholderProps = CommonProps & {
   /** pass any renderable content to be used as placeholder instead of the built-in ones */
-  customPlaceholder?:
-    | React.ReactNode
-    | React.ReactElement<{ [k: string]: any }>;
+  customPlaceholder: React.ReactElement<{ [k: string]: any }> | null;
   type?: undefined;
   rows?: undefined;
   color?: undefined;
@@ -89,7 +87,7 @@ const ReactPlaceholder: React.FC<Props> = ({
   const [ready, setReady] = React.useState(readyProp);
   const timeout = React.useRef<null | number>(null);
 
-  const getFiller = (): React.ReactNode => {
+  const getFiller = (): React.ReactElement | null => {
     const classes = showLoadingAnimation
       ? joinClassNames('show-loading-animation', className)
       : className;
