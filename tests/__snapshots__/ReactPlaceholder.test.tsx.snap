@@ -11,29 +11,31 @@ Array [
 `;
 
 exports[`ReactPlaceholder renders content when it's ready, then a placeholder when it's not ready, and finally content again when it's ready 1`] = `
-Array [
-  <div>
-    Some ready content
-  </div>,
-]
+<div>
+  Some ready content
+</div>
 `;
 
 exports[`ReactPlaceholder renders content when it's ready, then a placeholder when it's not ready, and finally content again when it's ready 2`] = `
-Array [
-  <TextBlock
-    color="#CDCDCD"
-    delay={0}
-    rows={2}
-  />,
-]
+<div
+  class="text-block"
+  style="width: 100%;"
+>
+  <div
+    class="text-row"
+    style="max-height: 33.333333333333336%; width: 97%; height: 1em; background-color: rgb(205, 205, 205); margin-top: 0.7em;"
+  />
+  <div
+    class="text-row"
+    style="max-height: 33.333333333333336%; width: 100%; height: 1em; background-color: rgb(205, 205, 205); margin-top: 0.7em;"
+  />
+</div>
 `;
 
 exports[`ReactPlaceholder renders content when it's ready, then a placeholder when it's not ready, and finally content again when it's ready 3`] = `
-Array [
-  <div>
-    Some ready content
-  </div>,
-]
+<div>
+  Some ready content
+</div>
 `;
 
 exports[`ReactPlaceholder renders the content when it's ready 1`] = `
@@ -54,13 +56,19 @@ Array [
 `;
 
 exports[`ReactPlaceholder renders the placeholder only after the specified delay 1`] = `
-Array [
-  <TextBlock
-    color="#CDCDCD"
-    delay={10000}
-    rows={2}
-  />,
-]
+<div
+  class="text-block"
+  style="width: 100%;"
+>
+  <div
+    class="text-row"
+    style="max-height: 33.333333333333336%; width: 97%; height: 1em; background-color: rgb(205, 205, 205); margin-top: 0.7em;"
+  />
+  <div
+    class="text-row"
+    style="max-height: 33.333333333333336%; width: 100%; height: 1em; background-color: rgb(205, 205, 205); margin-top: 0.7em;"
+  />
+</div>
 `;
 
 exports[`ReactPlaceholder renders the rect placeholder when the content is not ready 1`] = `

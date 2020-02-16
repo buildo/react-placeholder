@@ -5,6 +5,8 @@ import * as path from 'path';
 import { flatten } from 'lodash';
 import ReactPlaceholder from '../src/ReactPlaceholder';
 import { shallow } from 'enzyme';
+import { act, render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 jest.useFakeTimers();
 
@@ -92,19 +94,21 @@ describe('ReactPlaceholder', () => {
 
   it('renders the placeholder only after the specified delay', () => {
     const content = <div>Some content still loading...</div>;
-    const tree = shallow(
+    const { container, queryByText, rerender } = render(
       <ReactPlaceholder ready type="text" rows={2} delay={10000}>
         {content}
       </ReactPlaceholder>
     );
-    expect(tree.contains(content)).toBe(true);
-    tree.setProps({ ready: false });
-    tree.update();
-    expect(tree.contains(content)).toBe(true);
-    jest.runAllTimers();
-    tree.update();
-    expect(tree.contains(content)).toBe(false);
-    expect(tree.getElements()).toMatchSnapshot();
+    expect(queryByText('Some content still loading...')).toBeInTheDocument();
+    rerender(<ReactPlaceholder ready={false} type="text" rows={2} delay={10000}>
+      {content}
+    </ReactPlaceholder>);
+    expect(queryByText('Some content still loading...')).toBeInTheDocument();
+    act(() => {
+      jest.runAllTimers();
+    });
+    expect(queryByText('Some content still loading...')).not.toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it("renders the content when it's ready", () => {
@@ -120,23 +124,27 @@ describe('ReactPlaceholder', () => {
 
   it("renders content when it's ready, then a placeholder when it's not ready, and finally content again when it's ready", () => {
     const content = <div>Some ready content</div>;
-    const tree = shallow(
-      <ReactPlaceholder type="text" rows={2} ready>
+    const { queryByText, container, rerender } = render(
+      <ReactPlaceholder type="text" rows={2} ready={true}>
         {content}
       </ReactPlaceholder>
     );
-    expect(tree.contains(content)).toBe(true);
-    expect(tree.getElements()).toMatchSnapshot();
+    expect(queryByText('Some ready content')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
 
-    tree.setProps({ ready: false });
+    rerender(<ReactPlaceholder type="text" rows={2} ready={false}>
+      {content}
+    </ReactPlaceholder>);
 
-    expect(tree.contains(content)).toBe(false);
-    expect(tree.getElements()).toMatchSnapshot();
+    expect(queryByText('Some ready content')).not.toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
 
-    tree.setProps({ ready: true });
+    rerender(<ReactPlaceholder type="text" rows={2} ready={true}>
+      {content}
+    </ReactPlaceholder>);
 
-    expect(tree.contains(content)).toBe(true);
-    expect(tree.getElements()).toMatchSnapshot();
+    expect(queryByText('Some ready content')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
 
