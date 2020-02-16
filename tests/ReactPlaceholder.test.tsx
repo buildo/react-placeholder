@@ -146,6 +146,32 @@ describe('ReactPlaceholder', () => {
     expect(queryByText('Some ready content')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('renders content when firstLaunchOnly is true and ready changes to true, and keeps it rendered when ready changes to false', () => {
+    const content = <div>Some ready content</div>;
+    const { queryByText, container, rerender } = render(
+      <ReactPlaceholder type="rect" ready={false} firstLaunchOnly={true}>
+        {content}
+      </ReactPlaceholder>
+    );
+    expect(queryByText('Some ready content')).not.toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+
+    rerender(<ReactPlaceholder  type="rect" ready={true} firstLaunchOnly={true}>
+      {content}
+    </ReactPlaceholder>);
+
+    expect(queryByText('Some ready content')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+
+    rerender(<ReactPlaceholder  type="rect" ready={false} firstLaunchOnly={true}>
+      {content}
+    </ReactPlaceholder>);
+
+    // content is still rendered
+    expect(queryByText('Some ready content')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
 
 describe('build', () => {

@@ -10,6 +10,25 @@ Array [
 ]
 `;
 
+exports[`ReactPlaceholder renders content when firstLaunchOnly is true and ready changes to true, and keeps it rendered when ready changes to false 1`] = `
+<div
+  class="rect-shape"
+  style="background-color: rgb(205, 205, 205); width: 100%; height: 100%; margin-right: 10px;"
+/>
+`;
+
+exports[`ReactPlaceholder renders content when firstLaunchOnly is true and ready changes to true, and keeps it rendered when ready changes to false 2`] = `
+<div>
+  Some ready content
+</div>
+`;
+
+exports[`ReactPlaceholder renders content when firstLaunchOnly is true and ready changes to true, and keeps it rendered when ready changes to false 3`] = `
+<div>
+  Some ready content
+</div>
+`;
+
 exports[`ReactPlaceholder renders content when it's ready, then a placeholder when it's not ready, and finally content again when it's ready 1`] = `
 <div>
   Some ready content
