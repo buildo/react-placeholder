@@ -127,6 +127,16 @@ Array [
 ]
 `;
 
+exports[`ReactPlaceholder renders the text placeholder with the lineSpacing set 1`] = `
+Array [
+  <TextBlock
+    color="#CDCDCD"
+    lineSpacing={3}
+    rows={2}
+  />,
+]
+`;
+
 exports[`ReactPlaceholder renders the textRow placeholder when the content is not ready 1`] = `
 Array [
   <TextRow

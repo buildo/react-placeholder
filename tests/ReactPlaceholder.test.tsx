@@ -22,6 +22,18 @@ describe('ReactPlaceholder', () => {
     expect(tree.getElements()).toMatchSnapshot();
   });
 
+  it('renders the text placeholder with the lineSpacing set', () => {
+    const content = <div>Some content still loading...</div>;
+    const tree = shallow(
+      <ReactPlaceholder type="text" rows={2} ready={false} lineSpacing={3}>
+        {content}
+      </ReactPlaceholder>
+    );
+    expect(tree.contains(content)).toBe(false);
+    expect(tree.find('TextBlock').prop('lineSpacing')).toBe(3);
+    expect(tree.getElements()).toMatchSnapshot();
+  });
+
   it('renders the media placeholder when the content is not ready', () => {
     const content = <div>Some content still loading...</div>;
     const tree = shallow(
