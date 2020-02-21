@@ -137,6 +137,16 @@ const ReactPlaceholder: React.FC<Props> = ({
     }
   }, [firstLaunchOnly, ready, readyProp, delay]);
 
+  // clear the timeout when the component unmounts
+  React.useEffect(
+    () => () => {
+      if (timeout.current) {
+        window.clearTimeout(timeout.current);
+      }
+    },
+    []
+  );
+
   return ready ? children : getFiller();
 };
 
