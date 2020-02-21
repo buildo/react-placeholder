@@ -99,9 +99,10 @@ const ReactPlaceholder: React.FC<Props> = ({
       : className;
 
     if (customPlaceholder && React.isValidElement(customPlaceholder)) {
-      const mergedCustomClasses = [customPlaceholder.props.className, classes]
-        .filter(c => c)
-        .join(' ');
+      const mergedCustomClasses = joinClassNames(
+        customPlaceholder.props.className,
+        classes
+      );
       return React.cloneElement(customPlaceholder, {
         className: mergedCustomClasses
       });
