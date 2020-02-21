@@ -17,7 +17,7 @@ export type CommonProps = {
 export type PlaceholderProps = CommonProps & {
   // we have a default color, so we can set this as optional
   color?: string;
-  // we have a default color, so we can set this as optional
+  // we have a default number of rows, so we can set this as optional
   rows?: number;
   showLoadingAnimation?: boolean;
   customPlaceholder?: undefined;
