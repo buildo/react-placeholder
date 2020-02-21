@@ -25,7 +25,7 @@ export type PlaceholderProps = CommonProps & {
 
 export type CustomPlaceholderProps = CommonProps & {
   /** pass any renderable content to be used as placeholder instead of the built-in ones */
-  customPlaceholder: React.ReactElement<{ [k: string]: any }> | null;
+  customPlaceholder?: React.ReactElement<{ [k: string]: any }> | null;
   type?: undefined;
   rows?: undefined;
   color?: undefined;

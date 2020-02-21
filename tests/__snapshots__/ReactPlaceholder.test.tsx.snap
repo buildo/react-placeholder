@@ -127,6 +127,15 @@ Array [
 ]
 `;
 
+exports[`ReactPlaceholder renders the text placeholder with 3 rows as the default placeholder 1`] = `
+Array [
+  <TextBlock
+    color="#CDCDCD"
+    rows={3}
+  />,
+]
+`;
+
 exports[`ReactPlaceholder renders the text placeholder with the lineSpacing set 1`] = `
 Array [
   <TextBlock

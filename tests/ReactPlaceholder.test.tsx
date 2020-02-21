@@ -11,6 +11,17 @@ import '@testing-library/jest-dom/extend-expect';
 jest.useFakeTimers();
 
 describe('ReactPlaceholder', () => {
+  it('renders the text placeholder with 3 rows as the default placeholder', () => {
+    const content = <div>Some content still loading...</div>;
+    const tree = shallow(
+      <ReactPlaceholder ready={false}>
+        {content}
+      </ReactPlaceholder>
+    );
+    expect(tree.contains(content)).toBe(false);
+    expect(tree.getElements()).toMatchSnapshot();
+  });
+
   it('renders the text placeholder when the content is not ready', () => {
     const content = <div>Some content still loading...</div>;
     const tree = shallow(
