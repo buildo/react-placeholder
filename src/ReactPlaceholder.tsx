@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as placeholders from './placeholders';
 import { joinClassNames } from './utils';
 
-export type CommonProps = {
+type CommonProps = {
   children: React.ReactElement | null;
   /** pass `true` when the content is ready and `false` when it's loading */
   ready: boolean;
@@ -14,7 +14,7 @@ export type CommonProps = {
   style?: React.CSSProperties;
 };
 
-export type PlaceholderProps = CommonProps & {
+type PlaceholderProps = CommonProps & {
   // we have a default color, so we can set this as optional
   color?: string;
   // we have a default number of rows, so we can set this as optional
@@ -23,7 +23,7 @@ export type PlaceholderProps = CommonProps & {
   customPlaceholder?: undefined;
 };
 
-export type CustomPlaceholderProps = CommonProps & {
+type CustomPlaceholderProps = CommonProps & {
   /** pass any renderable content to be used as placeholder instead of the built-in ones */
   customPlaceholder?: React.ReactElement<{ [k: string]: any }> | null;
   type?: undefined;
