@@ -1,75 +1,52 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import TextRow from './TextRow';
-
-export type DefaultedProps = Props & {
-  widths: NonNullable<Props['widths']>
-}
+import { joinClassNames } from '../utils';
 
 export type Props = {
-  rows: number,
-  color: string,
-  lineSpacing?: string | number,
-  widths?: number[],
-  style?: React.CSSProperties,
-  className?: string
-}
+  rows: number;
+  color: string;
+  lineSpacing?: string | number;
+  widths?: number[];
+  style?: React.CSSProperties;
+  className?: string;
+};
 
-export default class TextBlock extends React.Component<Props> {
+const defaultStyles = {
+  width: '100%'
+};
 
-  static propTypes = {
-    rows: PropTypes.number.isRequired,
-    color: PropTypes.string.isRequired,
-    lineSpacing: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
-    ]),
-    widths: PropTypes.arrayOf(PropTypes.number),
-    style: PropTypes.object,
-    className: PropTypes.string
-  }
+const defaultWidths = [97, 100, 94, 90, 98, 95, 98, 40];
 
-  static defaultProps: Partial<Props> = {
-    widths: [97, 100, 94, 90, 98, 95, 98, 40]
-  }
-
-  getRowStyle = (i: number) => {
-    const { rows, widths } = this.props as DefaultedProps;
-
+const TextBlock: React.FC<Props> = ({
+  rows,
+  lineSpacing,
+  color,
+  style,
+  className,
+  widths = defaultWidths
+}) => {
+  const getRowStyle = (i: number) => {
     return {
-      maxHeight: `${(100 / (rows * 2 - 1))}%`,
+      maxHeight: `${100 / (rows * 2 - 1)}%`,
       width: `${widths[(i + widths.length) % widths.length]}%`
     };
-  }
+  };
 
-  getRows = () => {
-    const { rows, lineSpacing, color } = this.props;
-    const range: undefined[] = Array.apply(null, Array(rows));
-    return range.map((_, i) => (
-      <TextRow
-        color={color}
-        style={this.getRowStyle(i)}
-        lineSpacing={i !== 0 ? lineSpacing : 0}
-        key={i}
-      />
-    ));
-  }
+  return (
+    <div
+      className={joinClassNames('text-block', className)}
+      style={{ ...defaultStyles, ...style }}
+    >
+      {Array.apply(null, Array(rows)).map((_, i) => (
+        <TextRow
+          color={color}
+          style={getRowStyle(i)}
+          lineSpacing={i !== 0 ? lineSpacing : 0}
+          key={i}
+        />
+      ))}
+    </div>
+  );
+};
 
-  render() {
-    const { style, className } = this.props;
-
-
-    const defaultStyles = {
-      width: '100%'
-    };
-
-    const classes = ['text-block', className].filter(c => c).join(' ');
-
-    return (
-      <div className={classes} style={{ ...defaultStyles, ...style }}>
-        {this.getRows()}
-      </div>
-    );
-  }
-
-}
+export default TextBlock;

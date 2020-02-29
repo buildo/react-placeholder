@@ -1,35 +1,26 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import { joinClassNames } from '../utils';
 
 export type Props = {
-  color?: string,
-  className?: string,
-  style?: React.CSSProperties
-}
+  color?: string;
+  className?: string;
+  style?: React.CSSProperties;
+};
 
-export default class RectShape extends React.Component<Props> {
+const RectShape: React.FC<Props> = ({ className, style, color }) => {
+  const defaultStyle = {
+    backgroundColor: color,
+    width: '100%',
+    height: '100%',
+    marginRight: 10
+  };
 
-  static propTypes = {
-    color: PropTypes.string,
-    className: PropTypes.string,
-    style: PropTypes.object
-  }
+  return (
+    <div
+      className={joinClassNames('rect-shape', className)}
+      style={{ ...defaultStyle, ...style }}
+    />
+  );
+};
 
-  render() {
-    const { className, style, color } = this.props;
-
-    const defaultStyle = {
-      backgroundColor: color,
-      width: '100%',
-      height: '100%',
-      marginRight: 10
-    };
-
-    const classes = ['rect-shape', className].filter(c => c).join(' ');
-
-    return (
-      <div className={classes} style={{ ...defaultStyle, ...style }} />
-    );
-  }
-
-}
+export default RectShape;

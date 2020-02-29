@@ -1,42 +1,32 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import TextBlock from './TextBlock';
 import RoundShape from './RoundShape';
+import { joinClassNames } from '../utils';
 
 export type Props = {
-  rows: number,
-  color: string,
-  style?: React.CSSProperties,
-  className?: string
-}
+  rows: number;
+  color: string;
+  style?: React.CSSProperties;
+  className?: string;
+};
 
-export default class MediaBlock extends React.Component<Props> {
+const defaultStyles = {
+  display: 'flex'
+};
 
-  static propTypes = {
-    rows: PropTypes.number.isRequired,
-    color: PropTypes.string.isRequired,
-    style: PropTypes.object,
-    className: PropTypes.string
-  }
+const MediaBlock: React.FC<Props> = ({ className, style, color, rows }) => {
+  return (
+    <div
+      className={joinClassNames('media-block', className)}
+      style={{ ...defaultStyles, ...style }}
+    >
+      <RoundShape
+        color={color}
+        style={{ minHeight: 55, width: 55, minWidth: 55, marginRight: 10 }}
+      />
+      <TextBlock color={color} rows={rows} />
+    </div>
+  );
+};
 
-  render() {
-    const { className, style, color, rows } = this.props;
-
-    const defaultStyles = {
-      display: 'flex'
-    };
-
-    const classes = ['media-block', className].filter(c => c).join(' ');
-
-    return (
-      <div className={classes} style={{ ...defaultStyles, ...style }}>
-        <RoundShape
-          color={color}
-          style={{ minHeight: 55, width: 55, minWidth: 55, marginRight: 10 }}
-        />
-        <TextBlock color={color} rows={rows} />
-      </div>
-    );
-  }
-
-}
+export default MediaBlock;

@@ -26,23 +26,21 @@ npm install --save react-placeholder
 
 ### Props
 
-```jsx
-children:             PropTypes.oneOfType([
-                         PropTypes.node,
-                         PropTypes.element
-                      ]).isRequired,
-ready:                PropTypes.bool.isRequired,
-delay:                PropTypes.number,
-firstLaunchOnly:      PropTypes.bool,
-showLoadingAnimation: PropTypes.bool,
-type:                 PropTypes.oneOf(['text', 'media', 'textRow', 'rect', 'round']),
-rows:                 PropTypes.number,
-color:                PropTypes.string,
-customPlaceholder:    PropTypes.oneOfType([
-                         PropTypes.node,
-                         PropTypes.element
-                      ])
+```tsx
+children:              ReactElement | null;
+ready:                 boolean;
+delay?:                number;
+firstLaunchOnly?:      boolean;
+showLoadingAnimation?: boolean;
+type?:                 'text' | 'media' | 'textRow' | 'rect' | 'round';
+rows?:                 number;
+color?:                string;
+customPlaceholder?:    ReactElement;
+className?:            string;
+style?:                CSSProperties;
 ```
+
+The default props will render a `text` placeholder with `3` rows and the color `#CDCDCD`.
 
 ### Customization
 If the built-in set of placeholders is not enough, you can pass you own through the prop **"customPlaceholder"**
