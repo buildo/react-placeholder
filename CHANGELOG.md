@@ -2,6 +2,13 @@
 
 
 
+## [v4.0.0](https://github.com/buildo/react-placeholder/tree/v4.0.0) (2020-02-29)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v3.0.2...v4.0.0)
+
+#### Breaking:
+
+- Warning: componentWillReceiveProps has been renamed, and is not recommended for use. [#83](https://github.com/buildo/react-placeholder/issues/83)
+
 ## [v3.0.2](https://github.com/buildo/react-placeholder/tree/v3.0.2) (2019-02-21)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v3.0.1...v3.0.2)
 
