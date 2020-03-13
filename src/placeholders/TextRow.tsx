@@ -13,7 +13,7 @@ const TextRow: React.FC<Props> = ({
   className,
   maxHeight,
   color,
-  lineSpacing,
+  lineSpacing= '0.7em',
   style
 }) => {
   const defaultStyles = {
@@ -21,7 +21,7 @@ const TextRow: React.FC<Props> = ({
     width: '100%',
     height: '1em',
     backgroundColor: color,
-    marginTop: lineSpacing || '0.7em'
+    marginTop: lineSpacing
   };
 
   return (

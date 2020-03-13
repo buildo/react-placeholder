@@ -241,6 +241,23 @@ Array [
 ]
 `;
 
+exports[`placeholder TextRow renders a TextRow with a lineSpacing of 0 1`] = `
+Array [
+  <div
+    className="text-row"
+    style={
+      Object {
+        "backgroundColor": "rebeccapurple",
+        "height": "1em",
+        "marginTop": 0,
+        "maxHeight": undefined,
+        "width": "100%",
+      }
+    }
+  />,
+]
+`;
+
 exports[`placeholder TextRow renders a TextRow with custom maxHeight and lineSpacing 1`] = `
 Array [
   <div
