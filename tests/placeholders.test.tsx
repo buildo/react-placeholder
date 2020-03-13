@@ -136,6 +136,15 @@ describe('placeholder', () => {
       expect(tree.getElements()).toMatchSnapshot();
     });
 
+    it('renders a TextRow with a lineSpacing of 0', () => {
+      const tree = shallow(
+        <TextRow color="rebeccapurple" lineSpacing={0} />
+      );
+
+      expect(tree.prop('style').marginTop).toBe(0);
+      expect(tree.getElements()).toMatchSnapshot();
+    });
+
     it('renders a TextRow with custom styles and classNames, overriding set maxHeight and lineSpacing', () => {
       const tree = shallow(
         <TextRow

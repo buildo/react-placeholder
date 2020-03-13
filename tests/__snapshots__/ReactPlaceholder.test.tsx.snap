@@ -42,7 +42,7 @@ exports[`ReactPlaceholder renders content when it's ready, then a placeholder wh
 >
   <div
     class="text-row"
-    style="max-height: 33.333333333333336%; width: 97%; height: 1em; background-color: rgb(205, 205, 205); margin-top: 0.7em;"
+    style="max-height: 33.333333333333336%; width: 97%; height: 1em; background-color: rgb(205, 205, 205); margin-top: 0px;"
   />
   <div
     class="text-row"
@@ -81,7 +81,7 @@ exports[`ReactPlaceholder renders the placeholder only after the specified delay
 >
   <div
     class="text-row"
-    style="max-height: 33.333333333333336%; width: 97%; height: 1em; background-color: rgb(205, 205, 205); margin-top: 0.7em;"
+    style="max-height: 33.333333333333336%; width: 97%; height: 1em; background-color: rgb(205, 205, 205); margin-top: 0px;"
   />
   <div
     class="text-row"
