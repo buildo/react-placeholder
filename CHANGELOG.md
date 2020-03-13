@@ -2,6 +2,14 @@
 
 
 
+## [v4.0.1](https://github.com/buildo/react-placeholder/tree/v4.0.1) (2020-03-13)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v4.0.0...v4.0.1)
+
+#### New features:
+
+- TextRow/TextBlock ignores lineSpacing is equal to 0 [#86](https://github.com/buildo/react-placeholder/issues/86)
+- Is this package still maintained?  [#84](https://github.com/buildo/react-placeholder/issues/84)
+
 ## [v4.0.0](https://github.com/buildo/react-placeholder/tree/v4.0.0) (2020-02-29)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v3.0.2...v4.0.0)
 
