@@ -3,7 +3,7 @@ import * as placeholders from './placeholders';
 import { joinClassNames } from './utils';
 
 type CommonProps = {
-  children: React.ReactElement | null;
+  children: React.ReactNode;
   /** pass `true` when the content is ready and `false` when it's loading */
   ready: boolean;
   /** delay in millis to wait when passing from ready to NOT ready */
@@ -147,7 +147,14 @@ const ReactPlaceholder: React.FC<Props> = ({
     []
   );
 
-  return ready ? children : getFiller();
+  // Casting - workaround for DefinitelyTyped/react issue with
+  // FunctionComponents returning ReactElement, where they should be able to
+  // return ReactNode. Casting also doesn't introduce another layer in the
+  // component tree like another `<>children</>` workaround does.
+  //
+  // See https://github.com/DefinitelyTyped/DefinitelyTyped/issues/33006
+  // and https://github.com/DefinitelyTyped/DefinitelyTyped/issues/18051
+  return ready ? children as React.ReactElement : getFiller();
 };
 
 export default ReactPlaceholder;

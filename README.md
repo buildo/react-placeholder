@@ -27,7 +27,7 @@ npm install --save react-placeholder
 ### Props
 
 ```tsx
-children:              ReactElement | null;
+children:              ReactNode;
 ready:                 boolean;
 delay?:                number;
 firstLaunchOnly?:      boolean;
