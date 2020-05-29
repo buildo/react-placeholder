@@ -13,6 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
-    - run: yarn install
-    - run: yarn preversion
-    - run: yarn prepublish
+    - run: npm install --no-package-lock
+    - run: npm run preversion
+    - run: npm run prepublish
