@@ -7,7 +7,7 @@
     "test": "jest",
     "build": "rm -rf lib && mkdir lib && node-sass src -o lib && tsc",
     "preversion": "npm run test",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "start": "styleguidist server",
     "typecheck": "tsc --noEmit",
     "release-version": "smooth-release"

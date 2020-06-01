@@ -15,4 +15,4 @@ jobs:
     - uses: actions/setup-node@v1
     - run: npm ci
     - run: npm run preversion
-    - run: npm run prepublish
+    - run: npm run prepublishOnly
