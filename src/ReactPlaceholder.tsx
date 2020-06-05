@@ -29,7 +29,7 @@ type CustomPlaceholderProps = CommonProps & {
   type?: undefined;
   rows?: undefined;
   color?: undefined;
-  showLoadingAnimation?: undefined;
+  showLoadingAnimation?: boolean;
 };
 
 type MediaPlaceholderProps = PlaceholderProps &
