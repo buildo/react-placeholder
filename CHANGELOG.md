@@ -2,6 +2,9 @@
 
 
 
+## [v4.0.3](https://github.com/buildo/react-placeholder/tree/v4.0.3) (2020-06-11)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v4.0.2...v4.0.3)
+
 ## [v4.0.2](https://github.com/buildo/react-placeholder/tree/v4.0.2) (2020-06-01)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v4.0.1...v4.0.2)
 
