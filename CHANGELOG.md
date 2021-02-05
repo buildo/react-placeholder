@@ -2,6 +2,17 @@
 
 
 
+## [v4.1.0](https://github.com/buildo/react-placeholder/tree/v4.1.0) (2021-02-05)
+[Full Changelog](https://github.com/buildo/react-placeholder/compare/v4.0.3...v4.1.0)
+
+#### New features:
+
+- Problem with React 17 and npm version  7.5.1 on mac osx [#95](https://github.com/buildo/react-placeholder/issues/95)
+- [Question] CSS Import [#94](https://github.com/buildo/react-placeholder/issues/94)
+- type CustomPlaceholderProps showLoadingAnimation is undefined instead of boolean [#90](https://github.com/buildo/react-placeholder/issues/90)
+- v3.0.2 TypeScript error about missing properties [#82](https://github.com/buildo/react-placeholder/issues/82)
+- Do `children` and `ready` really have to be required props? [#79](https://github.com/buildo/react-placeholder/issues/79)
+
 ## [v4.0.3](https://github.com/buildo/react-placeholder/tree/v4.0.3) (2020-06-11)
 [Full Changelog](https://github.com/buildo/react-placeholder/compare/v4.0.2...v4.0.3)
 
