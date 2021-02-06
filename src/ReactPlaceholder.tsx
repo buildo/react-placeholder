@@ -3,7 +3,7 @@ import * as placeholders from './placeholders';
 import { joinClassNames } from './utils';
 
 type CommonProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   /** pass `true` when the content is ready and `false` when it's loading */
   ready: boolean;
   /** delay in millis to wait when passing from ready to NOT ready */
