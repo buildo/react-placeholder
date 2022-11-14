@@ -59,7 +59,7 @@
     "react": "^16.8.0",
     "react-docgen-typescript": "^1.16.1",
     "react-dom": "^16.8.0",
-    "react-styleguidist": "^6.0.33",
+    "react-styleguidist": "^13.0.0",
     "react-test-renderer": "^16.8.0",
     "sass-loader": "^6.0.7",
     "smooth-release": "^8.0.9",
