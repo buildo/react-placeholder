@@ -2,11 +2,17 @@ import * as React from 'react';
 import { execSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
-import { flatten } from 'lodash';
 import ReactPlaceholder from '../src/ReactPlaceholder';
 import { shallow } from 'enzyme';
 import { act, render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { JSDOM } from "jsdom"
+import '@testing-library/jest-dom';
+const flatten = require('lodash.flatten');
+
+const dom = new JSDOM()
+global.document = dom.window.document
+// @ts-ignore
+global.window = dom.window
 
 jest.useFakeTimers();
 

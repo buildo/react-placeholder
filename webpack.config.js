@@ -20,7 +20,9 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: [['buildo', { env: 'react' }]]
+              presets: [
+                ['@babel/preset-env', { targets: "defaults" }]
+              ]
             }
           },
           {
@@ -32,8 +34,8 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
-        loader: [
+        test: /\.css$/i,
+        use: [
           'style-loader',
           { loader: 'css-loader', options: { modules: true } }
         ]

@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES3",
+    "skipLibCheck": true,
+    "target": "ES6",
     "module": "commonjs",
     "declaration": true,
     "allowSyntheticDefaultImports": false,
     "allowJs": false,
     "experimentalDecorators": true,
     "outDir": "./lib",
-    "baseUrl": ".",
-    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": "./src",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": false,
@@ -19,7 +19,7 @@
     ]
   },
   "include": [
-    "src/*",
+    "./src/*",
     "typings"
   ]
 }
