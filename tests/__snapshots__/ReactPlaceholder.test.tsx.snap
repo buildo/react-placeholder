@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ReactPlaceholder renders a custom placeholder when the content is not ready 1`] = `
-Array [
+[
   <div
     className=""
   >
@@ -58,7 +58,7 @@ exports[`ReactPlaceholder renders content when it's ready, then a placeholder wh
 `;
 
 exports[`ReactPlaceholder renders the content when it's ready 1`] = `
-Array [
+[
   <div>
     Some ready content
   </div>,
@@ -66,7 +66,7 @@ Array [
 `;
 
 exports[`ReactPlaceholder renders the media placeholder when the content is not ready 1`] = `
-Array [
+[
   <MediaBlock
     color="#CDCDCD"
     rows={2}
@@ -91,7 +91,7 @@ exports[`ReactPlaceholder renders the placeholder only after the specified delay
 `;
 
 exports[`ReactPlaceholder renders the rect placeholder when the content is not ready 1`] = `
-Array [
+[
   <RectShape
     color="#CDCDCD"
     rows={3}
@@ -100,7 +100,7 @@ Array [
 `;
 
 exports[`ReactPlaceholder renders the round placeholder when the content is not ready 1`] = `
-Array [
+[
   <RoundShape
     color="#CDCDCD"
     rows={3}
@@ -109,7 +109,7 @@ Array [
 `;
 
 exports[`ReactPlaceholder renders the round placeholder with animation when the content is not ready 1`] = `
-Array [
+[
   <RoundShape
     className="show-loading-animation"
     color="#CDCDCD"
@@ -119,7 +119,7 @@ Array [
 `;
 
 exports[`ReactPlaceholder renders the text placeholder when the content is not ready 1`] = `
-Array [
+[
   <TextBlock
     color="#CDCDCD"
     rows={2}
@@ -128,7 +128,7 @@ Array [
 `;
 
 exports[`ReactPlaceholder renders the text placeholder with 3 rows as the default placeholder 1`] = `
-Array [
+[
   <TextBlock
     color="#CDCDCD"
     rows={3}
@@ -137,7 +137,7 @@ Array [
 `;
 
 exports[`ReactPlaceholder renders the text placeholder with the lineSpacing set 1`] = `
-Array [
+[
   <TextBlock
     color="#CDCDCD"
     lineSpacing={3}
@@ -147,7 +147,7 @@ Array [
 `;
 
 exports[`ReactPlaceholder renders the textRow placeholder when the content is not ready 1`] = `
-Array [
+[
   <TextRow
     color="#CDCDCD"
     rows={3}
@@ -156,7 +156,7 @@ Array [
 `;
 
 exports[`build build script generates every needed file 1`] = `
-Array [
+[
   "ReactPlaceholder.d.ts",
   "ReactPlaceholder.js",
   "index.d.ts",
@@ -174,6 +174,7 @@ Array [
   "placeholders/index.d.ts",
   "placeholders/index.js",
   "reactPlaceholder.css",
+  "reactPlaceholder.css.map",
   "utils.d.ts",
   "utils.js",
 ]

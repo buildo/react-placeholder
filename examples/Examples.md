@@ -60,6 +60,7 @@ With `firstLaunchOnly={true}` the placeholder will be rendered only the first ti
 
 ```js
 initialState = { ready: false }
+const [state, setState] = React.useState(initialState)
 
 function toggleReady() {
   setState({ ready: !state.ready })
@@ -79,6 +80,7 @@ You can delay the switch from "real component" to the placeholder with the prop 
 
 ```js
 initialState = { ready: true }
+const [state, setState] = React.useState(initialState)
 
 function toggleReady() {
   setState({ ready: !state.ready })

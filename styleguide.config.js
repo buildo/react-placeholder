@@ -13,7 +13,9 @@ module.exports = {
   // content
   title: 'react-placeholder',
   // assetsDir: 'styleguide/assets',
-  template: 'styleguide/index.html',
+  template: {
+    container: 'app',
+  },
   propsParser: require('react-docgen-typescript').parse, // detect docs using TS information
   sections: [{
     name: 'ReactPlaceholder',
@@ -21,8 +23,8 @@ module.exports = {
       path.resolve(__dirname, 'src/ReactPlaceholder.tsx')
     ]
   }],
-  showCode: true,
-  showUsage: false, // show props by default
+  exampleMode: 'collapse',
+  usageMode: 'collapse',
   getExampleFilename() {
     return path.resolve(__dirname, 'examples/Examples.md');
   }
